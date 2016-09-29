@@ -6,7 +6,7 @@ class User(db.Model):
     username = db.Column(db.String(64), index=True, unique=True)
     password = db.Column(db.String(64))
     email = db.Column(db.String(120), index=True, unique=True)
-    characters = db.relationship('Character', backref='player', lazy='dynamic')
+    #characters = db.relationship('Character', backref='player', lazy='dynamic')
 
     def is_authenticated(self):
         return True
@@ -26,7 +26,7 @@ class User(db.Model):
     def __repr__(self):
         return '<User %r>' % (self.username)
 
-class Character(db.Model):
+'''class Character(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(128))
     class_name = db.Column(db.String(128))
@@ -82,4 +82,4 @@ class Character(db.Model):
             return 3
             
     def bond_text(self, name, text):
-        return text.replace('[BLANK]', name)
+        return text.replace('[BLANK]', name)'''
