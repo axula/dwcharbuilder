@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="ranger" source="dungeon world core">
+    <description><![CDATA[<p>These city-born folk you travel with. Have they heard the call of the wolf? Felt the winds howl in the bleak deserts of the East? Have they hunted their prey with the bow and the knife like you? Hell no. That's why they need you.</p><p>Guide. Hunter. Creature of the wilds. You are these things and more. Your time in the wilderness may have been solitary until now, but the call of some greater thing - call it fate if you like - has cast your lot with these folk. Brave, they may be. Powerful and strong, too. You know the secrets of the spaces between, though.</p><p>Without you, they'd be lost. Blaze a trail through the blood and dark, strider.</p>]]></description>
+    <looks>
+        <look type="body">
+            <choice>Lithe Body</choice>
+            <choice>Wild Body</choice>
+            <choice>Sharp Body</choice>
+        </look>
+        <look type="eyes">
+            <choice>Wild Eyes</choice>
+            <choice>Sharp Eyes</choice>
+            <choice>Animal Eyes</choice>
+        </look>
+        <look type="hair">
+            <choice>Wild Hair</choice>
+            <choice>Bald</choice>
+            <choice>Hooded Head</choice>
+        </look>
+        <look type="clothes">
+            <choice>Cape</choice>
+            <choice>Camouflage</choice>
+            <choice>Traveling Clothes</choice>
+        </look>
+    </looks>
+    <stats>
+        <hp>8</hp>
+        <damage>d8</damage>
+    </stats>
+    <alignment>
+        <choice name="chaotic">Free someone from literal or figurative bonds.</choice>
+        <choice name="good">Endanger yourself to combat an unnatural threat.</choice>
+        <choice name="neutral">Help an animal or spirit of the wild.</choice>
+    </alignment>
+    <gear load="11">
+        <description>Your load is 11+Str.</description>
+        <items>
+            <item>Dungeon Rations (5 uses, 1 weight)</item>
+            <item>Leather Armor (1 armor, 1 weight)</item>
+            <item>A Bundle of Arrows (3 ammo, 1 weight)</item>
+        </items>
+        <choices>
+            <choice type="armaments" title="Choose your armament:" choices="1">
+                <option>Hunter's bow (near, far, 1 weight) and short sword (close, 1 weight)</option>
+                <option>Hunter's bow (near, far, 1 weight) and spear (reach, 1 weight)</option>
+            </choice>
+            <choice type="equipment" title="Choose one:" choices="1">
+                <option>Adventuring gear (1 weight) and dungeon rations (1 weight)</option>
+                <option>Adventuring gear (1 weight) and bundle of arrows (3 ammo, 1 weight)</option>
+            </choice>
+        </choices>
+    </gear>
+    <bonds text="Fill in the name of one of your companions in at least one:">
+        <bond>I have guided [BLANK] before and they owe me for it.</bond>
+        <bond>[BLANK] is a friend of nature, so I will be their friend as well.</bond>
+        <bond>[BLANK] has no respect for nature, so I have no respect for them.</bond>
+        <bond>[BLANK] does not understand life in the wild, so I will teach them.</bond>
+    </bonds>
+    <race>
+        <choice name="elf">
+            <description>When you undertake a perilous journey through wilderness whatever job you take you succeed as if you rolled a 10+.</description>
+            <name>Throndir</name>
+            <name>Elrosine</name>
+            <name>Aranwe</name>
+            <name>Celion</name>
+            <name>Dambrath</name>
+            <name>Lanethe</name>
+        </choice>
+        <choice name="human">
+            <description>When you make camp in a dungeon or city, you don't need to consume a ration.</description>
+            <name>Jonah</name>
+            <name>Halek</name>
+            <name>Brandon</name>
+            <name>Emory</name>
+            <name>Shrike</name>
+            <name>Nora</name>
+            <name>Diana</name>
+        </choice>
+    </race>
+    <moves>
+        <move name="Hunt and Track (Wis)" minLevel="1">
+            <description><![CDATA[<p>When you follow a trail of clues left behind by passing creatures, roll+WIS.</p><ul><li>On a 7+, you follow the creature's trail until there's a significant change in its direction or mode of travel.</li><li>On a 10+, you also choose 1:<ul><li>Gain a useful bit of information about your quarry, the GM will tell you what</li><li>Determine what caused the trail to end</li></ul></li></ul>]]></description>
+        </move>
+        <move name="Called Shot" minLevel="1">
+            <description><![CDATA[<p>When you attack a defenseless or surprised enemy at range, you can choose to deal your damage or name your target and roll+DEX.</p><ul><li>Head<ul><li>10+: As 7-9, plus your damage</li><li>7-9: They do nothing but stand and drool for a few moments</li></ul></li><li>Arms<ul><li>10+: As 7-9, plus your damage</li><li>7-9: They drop anything they're holding.</li></ul></li><li>Legs<ul><li>10+: As 7-9, plus your damage</li><li>7-9: They're hobbled and slow moving.</li></ul></li></ul>]]></description>
+        </move>
+        <move name="Animal Companion" minLevel="1">
+            <description><![CDATA[<p>You have a supernatural connection with a loyal animal. You can't talk to it per se but it always acts as you wish it to.</p>]]></description>
+            <options name="species" choices="1" title="Name your animal companion and choose a species:">
+                <option>Wolf</option>
+                <option>Cougar</option>
+                <option>Bear</option>
+                <option>Eagle</option>
+                <option>Dog</option>
+                <option>Hawk</option>
+                <option>Cat</option>
+                <option>Owl</option>
+                <option>Pigeon</option>
+                <option>Rat</option>
+                <option>Mule</option>
+            </options>
+            <options name="base" choices="1" title="Choose a base:">
+                <option>Ferocity +2, Cunning +1, 1 Armor, Instinct +1</option>
+                <option>Ferocity +2, Cunning +2, 0 Armor, Instinct +1</option>
+                <option>Ferocity +1, Cunning +2, 1 Armor, Instinct +1</option>
+                <option>Ferocity +3, Cunning +1, 1 Armor, Instinct +2</option>
+            </options>
+            <options name="strengths" title="Choose as many strengths as its ferocity:">
+                <option>Fast</option>
+                <option>Burly</option>
+                <option>Huge</option>
+                <option>Calm</option>
+                <option>Adaptable</option>
+                <option>Quick Reflexes</option>
+                <option>Tireless</option>
+                <option>Camouflage</option>
+                <option>Ferocious</option>
+                <option>Intimidating</option>
+                <option>Keen Senses</option>
+                <option>Stealthy</option>
+            </options>
+            <options name="training" title="Your animal companion is trained to fight humanoids. Choose as many additional trainings as its cunning:">
+                <option>Hunt</option>
+                <option>Search</option>
+                <option>Scout</option>
+                <option>Guard</option>
+                <option>Fight Monsters</option>
+                <option>Perform</option>
+                <option>Labor</option>
+                <option>Travel</option>
+            </options>
+            <options name="weakness" title="Choose as many weaknesses as its instinct:">
+                <option>Flighty</option>
+                <option>Savage</option>
+                <option>Slow</option>
+                <option>Broken</option>
+                <option>Frightening</option>
+                <option>Forgetful</option>
+                <option>Stubborn</option>
+                <option>Lame</option>
+            </options>
+        </move>
+        <move name="Command" minLevel="1">
+            <description><![CDATA[<p>When you work with your animal companion on something it's trained in</p><ul><li>and you attack the same target, add its ferocity to your damage</li><li>and you track, add its cunning to your roll</li><li>and you take damage, add its armor to your armor</li><li>and you discern realities, add its cunning to your roll</li><li>and you parley, add its cunning to your roll</li><li>and someone interferes with you, add its instinct to their roll</li></ul>]]></description>
+        </move>
+        <move name="Half-Elven" minLevel="2">
+            <description><![CDATA[<p><b>You may take this move only if it is your first advancement.</b></p><p>Somewhere in your lineage lies mixed blood and it begins to show its presence. You gain the elf starting move if you took the human one at character creation or vice versa.</p>]]></description>
+        </move>
+        <move name="Wild Empathy" minLevel="2">
+            <description><![CDATA[<p>You can speak with and understand animals.</p>]]></description>
+        </move>
+        <move name="Familiar Prey" minLevel="2">
+            <description><![CDATA[<p>When you spout lore about a monster you use WIS instead of INT.</p>]]></description>
+        </move>
+        <move name="Viper's Strike" minLevel="2">
+            <description><![CDATA[<p>When you strike an enemy with two weapons at once, add an extra 1d4 damage for your off-hand strike.</p>]]></description>
+        </move>
+        <move name="Camouflage" minLevel="2">
+            <description><![CDATA[<p>When you <b>keep still in natural surroundings</b>, enemies never spot you until you make a movement.</p>]]></description>
+        </move>
+        <move name="Man's Best Friend" minLevel="2">
+            <description><![CDATA[<p>When you <b>allow your animal companion to take a blow that was meant for you</b>, the damage is negated and your animal companion's ferocity becomes 0. If its ferocity is already 0 you can't use this ability. When you have a few hours of rest with your animal companion its ferocity returns to normal.</p>]]></description>
+        </move>
+        <move name="Blot Out the Sun" minLevel="2">
+            <description><![CDATA[<p>When you volley you may spend extra ammo before rolling. For each point of ammo spent you may choose an extra target. Roll once and apply damage to all targets.</p>]]></description>
+        </move>
+        <move name="Well-Trained" minLevel="2">
+            <description><![CDATA[<p>Choose another training for your animal companion.</p>]]></description>
+            <options name="training" choices="1">
+                <option>Hunt</option>
+                <option>Search</option>
+                <option>Scout</option>
+                <option>Guard</option>
+                <option>Fight Monsters</option>
+                <option>Perform</option>
+                <option>Labor</option>
+                <option>Travel</option>
+            </options>
+        </move>
+        <move name="God Amidst the Wastes" minLevel="2">
+            <description><![CDATA[<p>Dedicate yourself to a deity (name a new one or choose one that's already been established). You gain the commune and cast a spell cleric moves. When you select this move, treat yourself as a cleric of level 1 for using spells. Every time you gain a level thereafter, increase your effective cleric level by 1.</p>]]></description>
+        </move>
+        <move name="Follow Me" minLevel="2">
+            <description><![CDATA[<p>When you undertake a perilous journey you can take two roles. You make a separate roll for each.</p>]]></description>
+        </move>
+        <move name="A Safe Place" minLevel="2">
+            <description><![CDATA[<p>When you <b>set the watch for the night</b>, everyone takes +1 to take watch.</p>]]></description>
+        </move>
+        <move name="Wild Speech" minLevel="6" replaces="Wild Empathy">
+            <description><![CDATA[<p>You can speak with and understand any non-magical, non-planar creature.</p>]]></description>
+        </move>
+        <move name="Hunter's Prey" minLevel="6" replaces="Familiar Prey">
+            <description><![CDATA[<p>When you spout lore about a monster you use WIS instead of INT. On a 12+, in addition to the normal effects, you get to ask the GM any one question about the subject.</p>]]></description>
+        </move>
+        <move name="Viper's Fangs" minLevel="6" replaces="Viper's Strike">
+            <description><![CDATA[<p>When you strike an enemy with two weapons at once, add an extra 1d8 damage for your off-hand strike.</p>]]></description>
+        </move>
+        <move name="Smaug's Belly" minLevel="6">
+            <description><![CDATA[<p>When you know your target's weakest point your arrows have 2 piercing.</p>]]></description>
+        </move>
+        <move name="Strider" minLevel="6" replaces="Follow Me">
+            <description><![CDATA[<p>When you undertake a perilous journey you can take two roles. Roll twice and use the better result for both roles.</p>]]></description>
+        </move>
+        <move name="A Safer Place" minLevel="6" replaces="A Safe Place">
+            <description><![CDATA[<p>When you set the watch for the night everyone takes +1 to take watch. After a night in camp when you set the watch everyone takes +1 forward.</p>]]></description>
+        </move>
+        <move name="Observant" minLevel="6">
+            <description><![CDATA[<p>When you hunt and track, on a hit you may also ask one question about the creature you are tracking from the discern realities list for free.</p>]]></description>
+        </move>
+        <move name="Special Trick" minLevel="6">
+            <description><![CDATA[<p>Choose a move from another class. So long as you are working with your animal companion you have access to that move.</p>]]></description>
+        </move>
+        <move name="Unnatural Ally" minLevel="6">
+            <description><![CDATA[<p>Your animal companion is a monster, not an animal. Describe it. Give it +2 ferocity and +1 instinct, plus a new training.</p>]]></description>
+        </move>
+    </moves>
+</class>

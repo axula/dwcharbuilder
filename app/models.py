@@ -26,13 +26,13 @@ class User(db.Model):
     def __repr__(self):
         return '<User %r>' % (self.username)
 
-'''class Character(db.Model):
+class Character(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(128))
     class_name = db.Column(db.String(128))
     level = db.Column(db.Integer)
     xp = db.Column(db.Integer)
-    look = db.Column(db.String(128)) # [ 'Choice', 'Choice', 'Choice' ... ]
+    look = db.Column(db.String(128)) # { 'type' : 'Choice', 'type' : 'Choice' ... }
     # Stats
     strength = db.Column(db.Integer)
     dexterity = db.Column(db.Integer)
@@ -45,9 +45,8 @@ class User(db.Model):
     alignment = db.Column(db.String(32))
     race = db.Column(db.String(32))
     bonds = db.Column(db.String(64)) # ['Name', 'Name', ... ]
-    moves = db.Column(db.Text) # ['Move1', 'Move2', ... ]
+    moves = db.Column(db.Text) # { 'Move' : '', 'Move' : '[Choices]', ... }
     race_choice = db.Column(db.String(128))
-    move_choices = db.Column(db.Text) # { 'Move' : 'Choice', 'Move' : '[Choices]', ... }
     # Equipment
     weapons = db.Column(db.Text) # ['Item (tags)', 'Item (tags)', ... ]
     armor = db.Column(db.Text) # ['Item (tags)', 'Item (tags)', ... ]
@@ -58,9 +57,9 @@ class User(db.Model):
     spells_prepared = db.Column(db.Text) # ['Spell', 'Spell', ... ]
     
     def get_move_choices(self, move):
-        if move in json.loads(self.moves):
-            move_choices = json.loads(self.move_choices)
-            return move_choices[move]
+        moves = json.loads(self.moves)
+        if move in moves:
+            return moves[move]
             
     def max_hp(self):
         return self.hp_bonus + self.constitution
@@ -82,4 +81,4 @@ class User(db.Model):
             return 3
             
     def bond_text(self, name, text):
-        return text.replace('[BLANK]', name)'''
+        return text.replace('[BLANK]', name)

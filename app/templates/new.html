@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h1>New Character</h1>
+    </div>
+</div>
+<form id="new-character" method="post" action="">
+<div class="row">
+    <div class="col-md-6 col-sm-12">
+        <input class="form-control input-lg" placeholder="Name" name="name" required></div>
+    <div class="col-md-4 col-sm-8">
+        <select id="select-class" class="form-control input-lg" name="class" required>
+            <option value="" disabled selected hidden>Choose Class...</option>
+            {% for name, file in classes.iteritems() %}
+                <option value="{{ file }}">{{ name|title }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="col-md-2 col-sm-4">
+        <button id="save-character" class="btn btn-success btn-lg" disabled="disabled" style="width: 100%;">Save</button>
+    </div>
+</div>
+<br>
+<div id="class-content"></div>
+</form>
+
+{% endblock %}

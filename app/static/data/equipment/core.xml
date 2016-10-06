@@ -1,0 +1,309 @@
+<weapons>
+    <weapon name="Ragged Bow">
+        <tag type="range">near</tag>
+        <tag type="price">15</tag>
+        <tag type="weight">2</tag>
+    </weapon>
+    <weapon name="Fine Bow">
+        <tag type="range">near</tag>
+        <tag type="range">far</tag>
+        <tag type="price">60</tag>
+        <tag type="weight">2</tag>
+    </weapon>
+    <weapon name="Hunter's Bow">
+        <tag type="range">near</tag>
+        <tag type="range">far</tag>
+        <tag type="price">100</tag>
+        <tag type="weight">1</tag>
+    </weapon>
+    <weapon name="Crossbow">
+        <tag type="range">near</tag>
+        <tag>+1 damage</tag>
+        <tag>reload</tag>
+        <tag type="price">35</tag>
+        <tag type="weight">3</tag>
+    </weapon>
+    <weapon name="Bundle of Arrows">
+        <tag type="ammo">3</tag>
+        <tag type="price">1</tag>
+        <tag type="weight">1</tag>
+    </weapon>
+    <weapon name="Elven Arrows">
+        <tag type="ammo">4</tag>
+        <tag type="price">20</tag>
+        <tag type="weight">1</tag>
+    </weapon>
+    <weapon name="Club">
+        <tag type="range">close</tag>
+        <tag>two-handed</tag>
+        <tag type="price">1</tag>
+        <tag type="weight">2</tag>
+    </weapon>
+    <weapon name="Shillelagh">
+        <tag type="range">close</tag>
+        <tag>two-handed</tag>
+        <tag type="price">1</tag>
+        <tag type="weight">2</tag>
+    </weapon>
+    <weapon name="Staff">
+        <tag type="range">close</tag>
+        <tag>two-handed</tag>
+        <tag type="price">1</tag>
+        <tag type="weight">1</tag>
+    </weapon>
+    <weapon name="dagger">
+        <tag type="range">hand</tag>
+        <tag type="price">2</tag>
+        <tag type="weight">1</tag>
+    </weapon>
+    <weapon name="shiv">
+        <tag type="range">hand</tag>
+        <tag type="price">2</tag>
+        <tag type="weight">1</tag>
+    </weapon>
+    <weapon name="knife">
+        <tag type="range">hand</tag>
+        <tag type="price">2</tag>
+        <tag type="weight">1</tag>
+    </weapon>
+    <weapon name="Throwing Dagger">
+        <tag>thrown</tag>
+        <tag type="range">near</tag>
+        <tag type="price">1</tag>
+        <tag type="weight">0</tag>
+    </weapon>
+    <weapon name="Short Sword">
+        <tag type="range">close</tag>
+        <tag type="price">8</tag>
+        <tag type="weight">1</tag>
+    </weapon>
+    <weapon name="Axe">
+        <tag type="range">close</tag>
+        <tag type="price">8</tag>
+        <tag type="weight">1</tag>
+    </weapon>
+    <weapon name="Warhammer">
+        <tag type="range">close</tag>
+        <tag type="price">8</tag>
+        <tag type="weight">1</tag>
+    </weapon>
+    <weapon name="Mace">
+        <tag type="range">close</tag>
+        <tag type="price">8</tag>
+        <tag type="weight">1</tag>
+    </weapon>
+    <weapon name="Spear">
+        <tag type="range">reach</tag>
+        <tag>thrown</tag>
+        <tag type="range">near</tag>
+        <tag type="price">5</tag>
+        <tag type="weight">1</tag>
+    </weapon>
+    <weapon name="Long Sword">
+        <tag type="range">close</tag>
+        <tag>+1 damage</tag>
+        <tag type="price">15</tag>
+        <tag type="weight">2</tag>
+    </weapon>
+    <weapon name="Battle Axe">
+        <tag type="range">close</tag>
+        <tag>+1 damage</tag>
+        <tag type="price">15</tag>
+        <tag type="weight">2</tag>
+    </weapon>
+    <weapon name="Flail">
+        <tag type="range">close</tag>
+        <tag>+1 damage</tag>
+        <tag type="price">15</tag>
+        <tag type="weight">2</tag>
+    </weapon>
+    <weapon name="Halberd">
+        <tag type="range">reach</tag>
+        <tag>+1 damage</tag>
+        <tag>two-handed</tag>
+        <tag type="price">9</tag>
+        <tag type="weight">2</tag>
+    </weapon>
+    <weapon name="Rapier">
+        <tag type="range">close</tag>
+        <tag>precise</tag>
+        <tag type="price">25</tag>
+        <tag type="weight">1</tag>
+    </weapon>
+    <weapon name="Dueling Rapier">
+        <tag type="range">close</tag>
+        <tag>1 piercing</tag>
+        <tag>precise</tag>
+        <tag type="price">50</tag>
+        <tag type="weight">2</tag>
+    </weapon>
+</weapons>
+<armors>
+    <armor name="Leather Armor" bonus="1" type="worn">
+        <tag>1 armor</tag>
+        <tag>worn</tag>
+        <tag type="price"></tag>
+        <tag type="weight"></tag>
+    </armor>
+    <armor name="Hide Armor" bonus="1" type="worn">
+        <tag>1 armor</tag>
+        <tag>worn</tag>
+        <tag type="price">10</tag>
+        <tag type="weight">1</tag>
+    </armor>
+    <armor name="Chainmail" bonus="1" type="worn">
+        <tag>1 armor</tag>
+        <tag>worn</tag>
+        <tag type="price">10</tag>
+        <tag type="weight">1</tag>
+    </armor>
+    <armor name="Scale Mail" bonus="2" type="worn">
+        <tag>2 armor</tag>
+        <tag>worn</tag>
+        <tag>clumsy</tag>
+        <tag type="price">50</tag>
+        <tag type="weight">3</tag>
+    </armor>
+    <armor name="Plate Armor" bonus="3" type="worn">
+        <tag>3 armor</tag>
+        <tag>worn</tag>
+        <tag>clumsy</tag>
+        <tag type="price">350</tag>
+        <tag type="weight">4</tag>
+    </armor>
+    <armor name="Shield" bonus="1" type="shield">
+        <tag type="price">15</tag>
+        <tag type="weight">2</tag>
+    </armor>
+    <armor name="Wooden Shield" bonus="1" type="shield">
+        <tag type="price">15</tag>
+        <tag type="weight">1</tag>
+    </armor>
+</armors>
+<dungeonGear>
+    <gear name="Adventuring Gear">
+        <tag type="uses">5</tag>
+        <tag type="price">20</tag>
+        <tag type="weight">1</tag>
+        <description>Adventuring gear is a collection of useful mundane items such as chalk, poles, spikes, ropes, etc. When you rummage through your adventuring gear for some useful mundane item, you find what you need and mark off a use.</description>
+    </gear>
+    <gear name="Bandages">
+        <tag type="uses">3</tag>
+        <tag>slow</tag>
+        <tag type="price">5</tag>
+        <tag type="weight">0</tag>
+        <description>When you have a few minutes to bandage someone else’s wounds, heal them of 4 damage and expend a use.</description>
+    </gear>
+    <gear name="Poultices and Herbs">
+        <tag type="uses">2</tag>
+        <tag>slow</tag>
+        <tag type="price">10</tag>
+        <tag type="weight">1</tag>
+        <description>When you carefully treat someone’s wounds with poultices and herbs, heal them of 7 damage and expend a use.</description>
+    </gear>
+    <gear name="Healing Potion">
+        <tag type="price">50</tag>
+        <tag type="weight">0</tag>
+        <description>When you drink an entire healing potion, heal yourself of 10 damage or remove one debility, your choice.</description>
+    </gear>
+    <gear name="Keg of Dwarven Stout">
+        <tag type="price">10</tag>
+        <tag type="weight">4</tag>
+        <description>When you open a keg of dwarven stout and let everyone drink freely, take +1 to your Carouse roll. If you drink a whole keg yourself, you are very, very drunk.</description>
+    </gear>
+    <gear name="Bag of Books">
+        <tag type="uses">5</tag>
+        <tag type="price">10</tag>
+        <tag type="weight">2</tag>
+        <description></description>
+    </gear>
+    <gear name="Antitoxin">
+        <tag type="price">10</tag>
+        <tag type="weight">0</tag>
+        <description>When you drink antitoxin, you’re cured of one poison affecting you.</description>
+    </gear>
+    <gear name="Dungeon Rations">
+        <tag>Ration</tag>
+        <tag type="uses">5</tag>
+        <tag type="price">3</tag>
+        <tag type="weight">1</tag>
+        <description>Not tasty, but not bad either.</description>
+    </gear>
+    <gear name="Personal Feast">
+        <tag>Ration</tag>
+        <tag type="uses">1</tag>
+        <tag type="price">10</tag>
+        <tag type="weight">1</tag>
+        <description>Ostentatious to say the least.</description>
+    </gear>
+    <gear name="Dwarven Hardtack">
+        <tag type="requires">Dwarf</tag>
+        <tag>Ration</tag>
+        <tag type="uses">7</tag>
+        <tag type="price">3</tag>
+        <tag type="weight">1</tag>
+        <description>Dwarves say it tastes like home. Everyone else says it tastes like home, if home is a hog farm, and on fire.</description>
+    </gear>
+    <gear name="Elven Bread">
+        <tag>Ration</tag>
+        <tag type="uses">7</tag>
+        <tag type="price">10</tag>
+        <tag type="weight">1</tag>
+        <description>Only the greatest of elf-friends are treated to this rare delicacy.</description>
+    </gear>
+    <gear name="">
+        <tag type="uses">6</tag>
+        <tag type="price">5</tag>
+        <tag type="weight">0</tag>
+        <description>When you share halfling pipeleaf with someone, expend two uses and take +1 forward to parley with them.</description>
+    </gear>
+</dungeonGear>
+<poisons>
+    <poison name="Oil of Tagit">
+        <tag>dangerous</tag>
+        <tag>applied</tag>
+        <tag type="price">15</tag>
+        <tag type="weight">0</tag>
+    </poison>
+    <poison name="Bloodweed">
+        <tag>dangerous</tag>
+        <tag>touch</tag>
+        <tag type="price">12</tag>
+        <tag type="weight">0</tag>
+    </poison>
+    <poison name="Goldenroot">
+        <tag>dangerous</tag>
+        <tag>applied</tag>
+        <tag type="price">20</tag>
+        <tag type="weight">0</tag>
+    </poison>
+    <poison name="Serpent's Tears">
+        <tag>dangerous</tag>
+        <tag>touch</tag>
+        <tag type="price">10</tag>
+        <tag type="weight">0</tag>
+    </poison>
+</poisons>
+<tags>
+    <tag name="applied">It’s only useful when carefully applied to a person or to something they eat or drink.</tag>
+    <tag name="awkward">It’s unwieldy and tough to use.</tag>
+    <tag name="dangerous">It’s easy to get in trouble with it. If you interact with it without proper precautions the GM may freely invoke the consequences of your foolish actions.</tag>
+    <tag name="ration">It’s edible, more or less.</tag>
+    <tag name="slow">It takes minutes or more to use.</tag>
+    <tag name="touch">It’s used by touching it to the target’s skin.</tag>
+    <tag name="two-handed">It takes two hands to use it effectively.</tag>
+    <tag name="forceful">It can knock someone back a pace, maybe even off their feet.</tag>
+    <tag name="ignores armor">Don’t subtract armor from the damage taken.</tag>
+    <tag name="messy">It does damage in a particularly destructive way, ripping people and things apart.</tag>
+    <tag name="piercing">It goes right through armor. When you deal damage with n piercing, you subtract n from the enemy’s armor for that attack.</tag>
+    <tag name="precise">It rewards careful strikes. You use DEX to hack and slash with this weapon, not STR.</tag>
+    <tag name="reload">After you attack with it, it takes more than a moment to reset for another attack.</tag>
+    <tag name="stun">When you attack with it, it does stun damage instead of normal damage.</tag>
+    <tag name="thrown">Throw it at someone to hurt them. If you volley with this weapon, you can’t choose to mark off ammo on a 7–9; once you throw it, it’s gone until you can recover it.</tag>
+    <tag name="hand">It’s useful for attacking something within your reach, no further.</tag>
+    <tag name="close">It’s useful for attacking something at arm’s reach plus a foot or two.</tag>
+    <tag name="reach">It’s useful for attacking something that’s several feet away—maybe as far as ten.</tag>
+    <tag name="near">It’s useful for attacking if you can see the whites of their eyes.</tag>
+    <tag name="far">It’s useful for attacking something in shouting distance.</tag>
+    <tag name="clumsy">It’s tough to move around with. -1 ongoing while using it. This penalty is cumulative.</tag>
+</tags>

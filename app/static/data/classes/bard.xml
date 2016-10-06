@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="bard" source="dungeon world core">
+    <description><![CDATA[<p>The poems say an adventurer's life is all open roads and the glory of coin and combat. The tales told in every farmhand-filled inn have to have some ring of truth to them, don't they? The songs to inspire peasantry and royals alike - to soothe the savage beast or drive men to a frenzy - have to come from somewhere.</p><p>Enter the bard. You, with your smooth tongue and quick wit. You teller-of-tales and singer-of-songs. It takes a mere minstrel to retell a thing but a true bard to live it. Strap on your boots, noble orator. Sharpen that hidden dagger and take up the call. Someone's got to be there, fighting shoulder-to-shoulder with the goons and the thugs and the soon-to-be-heroes. Who better than you to write the tale of your own heroism?</p><p>Nobody. Get going.</p>]]></description>
+    <looks>
+        <look type="body">
+            <choice>Fit</choice>
+            <choice>Well-Fed</choice>
+            <choice>Thin</choice>
+        </look>
+        <look type="eyes">
+            <choice>Knowing Eyes</choice>
+            <choice>Fiery Eyes</choice>
+            <choice>Joyous Eyes</choice>
+        </look>
+        <look type="hair">
+            <choice>Fancy Hair</choice>
+            <choice>Wild Hair</choice>
+            <choice>Stylish Cap</choice>
+        </look>
+        <look type="clothes">
+            <choice>Finery</choice>
+            <choice>Traveling</choice>
+            <choice>Poor</choice>
+        </look>
+    </looks>
+    <stats>
+        <hp>6</hp>
+        <damage>d6</damage>
+    </stats>
+    <alignment>
+        <choice name="good">Perform your art to aid someone else.</choice>
+        <choice name="neutral">Avoid a conflict or defuse a tense situation.</choice>
+        <choice name="chaotic">Spur others to significant and unplanned decisive action.</choice>
+    </alignment>
+    <gear load="9">
+        <description>Your load is 9+Str.</description>
+        <items>
+            <item name="token"></item>
+        </items>
+        <choices>
+            <choice type="instrument" title="Choose one instrument:" choices="1">
+                <option>Your father's mandolin, repaired (0 weight)</option>
+                <option>A fine lute, a gift from a noble (0 weight)</option>
+                <option>The pipes with which you courted your first love (0 weight)</option>
+                <option>A stolen horn (0 weight)</option>
+                <option>A fiddle, never before played (0 weight)</option>
+                <option>A songbook in a forgotten tongue (0 weight)</option>
+            </choice>
+            <choice type="clothing" title="Choose your clothing:" choices="1">
+                <option>Leather armor (1 armor, 1 weight)</option>
+                <option>Ostentatious clothes (0 weight)</option>
+            </choice>
+            <choice type="armaments" title="Choose your armament:" choices="1">
+                <option>Dueling rapier (close, precise, 2 weight)</option>
+                <option>Worn bow (near, 2 weight), bundle of arrows (3 ammo, 1 weight), and short sword (close, 1 weight)</option>
+            </choice>
+            <choice type="equipment" title="Choose one:" choices="1">
+                <option>Adventuring gear (1 weight)</option>
+                <option>Bandages (0 weight)</option>
+                <option>Halfling pipeleaf (0 weight)</option>
+                <option>3 coins</option>
+            </choice>
+        </choices>
+    </gear>
+    <bonds text="Fill in the name of one of your companions in at least one:">
+        <bond>This is not my first adventure with [BLANK].</bond>
+        <bond>I sang stories of [BLANK] long before I ever met them in person.</bond>
+        <bond>[BLANK] is often the butt of my jokes.</bond>
+        <bond>I am writing a ballad about the adventures of [BLANK].</bond>
+        <bond>[BLANK] trusted me with a secret.</bond>
+        <bond>[BLANK] does not trust me, and for good reason.</bond>
+    </bonds>
+    <race>
+        <choice name="elf">
+            <description>When you enter an important location (your call) you can ask the GM for one fact from the history of that location.</description>
+            <name>Astrafel</name>
+            <name>Daelwyn</name>
+            <name>Feliana</name>
+            <name>Damarra</name>
+            <name>Sistranalle</name>
+            <name>Pendrell</name>
+            <name>Melliandre</name>
+            <name>Dagoliir</name>
+        </choice>
+        <choice name="human">
+            <description>When you first enter a civilized settlement someone who respects the custom of hospitality to minstrels will take you in as their guest.</description>
+            <name>Baldric</name>
+            <name>Leena</name>
+            <name>Dunwick</name>
+            <name>Willem</name>
+            <name>Edwyn</name>
+            <name>Florian</name>
+            <name>Seraphine</name>
+            <name>Quorra</name>
+            <name>Charlotte</name>
+            <name>Lily</name>
+            <name>Ramonde</name>
+            <name>Cassandra</name>
+        </choice>
+    </race>
+    <moves>
+        <move name="Arcane Art" minLevel="1">
+            <description><![CDATA[<p>When you <b>weave a performance into a basic spell</b>, choose an ally and an effect:</p><ul><li>Heal 1d8 damage</li><li>+1d4 forward to damage</li><li>Their mind is shaken clear of one enchantment</li><li>The next time someone successfully assists the target with aid, they get +2 instead of +1</li></ul><p>Then roll+Cha.</p><ul><li>On a 10+, the ally gets the selected effect.</li><li>On a 7-9, your spell still works, but you draw unwanted attention or your magic reverberates to other targets affecting them as well, GM's choice.</li></ul>]]></description>
+        </move>
+        <move name="Bardic Lore" minLevel="1">
+            <description><![CDATA[<p>When you <b>first encounter an important creature, location, or item (your call) covered by your bardic lore</b> you can ask the GM any one question about it; the GM will answer truthfully. The GM may then ask you what tale, song, or legend you heard that information in.</p>]]></description>
+            <options name="expertise" choices="1" title="Choose an area of expertise:">
+                <option>Spells and Magicks</option>
+                <option>The Dead and Undead</option>
+                <option>Grand Histories of the Known World</option>
+                <option>A Bestiary of Creatures Unusual</option>
+                <option>The Planar Spheres</option>
+                <option>Legends of Heroes Past</option>
+                <option>Gods and Their Servants</option>
+            </options>
+        </move>
+        <move name="Charming and Open" minLevel="1">
+            <description><![CDATA[<p>When you <b>speak frankly with someone</b>, you can ask their player a question from the list below. They must answer it truthfully, then they may ask you a question from the list (which you must answer truthfully).</p><ul><li>Whom do you serve?</li><li>What do you wish I would do?</li><li>How can I get you to _____________?</li><li>What are you really feeling right now?</li><li>What do you most desire?</li></ul>]]></description>
+        </move>
+        <move name="A Port in the Storm" minLevel="1">
+            <description><![CDATA[<p>When you <b>return to a civilized settlement you've visited before</b>, tell the GM when you were last here. They'll tell you how it's changed since then.</p>]]></description>
+        </move>
+        <move name="Healing Song" minLevel="2">
+            <description><![CDATA[<p>When you <b>heal with arcane art</b>, you heal +1d8 damage.</p>]]></description>
+        </move>
+        <move name="Vicious Cacophony" minLevel="2">
+            <description><![CDATA[<p>When you <b>grant bonus damage with arcane art</b>, you grant an extra +1d4 damage.</p>]]></description>
+        </move>
+        <move name="It Goes To Eleven" minLevel="2">
+            <description><![CDATA[<p>When you unleash a crazed performance (a righteous lute solo or mighty brass blast, maybe) choose a target who can hear you and roll+Cha.</p><ul><li>On a 10+ the target attacks their nearest ally in range.</li><li>On a 7-9 they attack their nearest ally, but you also draw their attention and ire.</li></ul>]]></description>
+        </move>
+        <move name="Metal Hurlant" minLevel="2">
+            <description><![CDATA[<p>When you <b>shout with great force or play a shattering note</b> choose a target and roll+Con.</p><ul><li>On a 10+ the target takes 1d10 damage and is deafened for a few minutes.</li><li>On a 7-9 you still damage your target, but it's out of control: the GM will choose an additional target nearby.</li></ul>]]></description>
+        </move>
+        <move name="A Little Help From My Friends" minLevel="2">
+            <description><![CDATA[<p>When you <b>successfully aid someone</b> you take +1 forward as well.</p>]]></description>
+        </move>
+        <move name="Eldritch Tones" minLevel="2">
+            <description><![CDATA[<p>Your arcane art is strong, allowing you to choose two effects instead of one.</p>]]></description>
+        </move>
+        <move name="Duelist's Parry" minLevel="2">
+            <description><![CDATA[<p>When you hack and slash, you take +1 armor forward.</p>]]></description>
+        </move>
+        <move name="Bamboozle" minLevel="2">
+            <description><![CDATA[<p>When you <b>parley with someone</b>, on a 7+ you also take +1 forward with them.</p>]]></description>
+        </move>
+        <move name="Multiclass Dabbler" minLevel="2">
+            <description><![CDATA[<p>Get one move from another class. Treat your level as one lower for choosing the move.</p>]]></description>
+            <options type="multiclass" levelMod="-1"></options>
+        </move>
+        <move name="Multiclass Initiate" minLevel="2">
+            <description><![CDATA[<p>Get one move from another class. Treat your level as one lower for choosing the move.</p>]]></description>
+            <options type="multiclass" levelMod="-1"></options>
+        </move>
+        <move name="Healing Chorus" minLevel="6" replaces="Healing Song">
+            <description><![CDATA[<p>When you <b>heal with arcane art</b>, you heal +2d8 damage.</p>]]></description>
+        </move>
+        <move name="Vicious Blast" minLevel="6" replaces="Vicious Cacophony">
+            <description><![CDATA[<p>When you <b>grant bonus damage with arcane art</b>, you grant an extra +2d4 damage.</p>]]></description>
+        </move>
+        <move name="Unforgettable Face" minLevel="6">
+            <description><![CDATA[<p>When you <b>meet someone you've met before</b> (your call) after some time apart you take +1 forward against them.</p>]]></description>
+        </move>
+        <move name="Reputation" minLevel="6">
+            <description><![CDATA[<p>When you first meet someone who's heard songs about you, roll+Cha.<p><ul><li>On a 10+, tell the GM two things they've heard about you.</li><li>On a 7-9, tell the GM one thing they've heard, and the GM tells you one thing.</li></ul>]]></description>
+        </move>
+        <move name="Eldritch Chord" minLevel="6" replaces="Eldritch Tones">
+            <description><![CDATA[<p>When you use arcane art, you choose two effects. You also get to choose one of those effects to double.</p>]]></description>
+        </move>
+        <move name="An Ear For Magic" minLevel="6">
+            <description><![CDATA[<p>When you <b>hear an enemy cast a spell</b> the GM will tell you the name of the spell and its effects. Take +1 forward when acting on the answers.</p>]]></description>
+        </move>
+        <move name="Devious" minLevel="6">
+            <description><![CDATA[<p>When you use charming and open you may also ask "How are you vulnerable to me?" Your subject may not ask this question of you.</p>]]></description>
+        </move>
+        <move name="Duelist's Block" minLevel="6" replaces="Duelist's Parry">
+            <description><![CDATA[<p>When you hack and slash, you take +2 armor forward.</p>]]></description>
+        </move>
+        <move name="Con" minLevel="6" replaces="Bamboozle">
+            <description><![CDATA[<p>When you <b>parley with someone</b>, on a 7+ you also take +1 forward with them and get to ask their player one question which they must answer truthfully.</p>]]></description>
+        </move>
+        <move name="Multiclass Master" minLevel="6">
+            <description><![CDATA[<p>Get one move from another class. Treat your level as one lower for choosing the move.</p>]]></description>
+            <options type="multiclass" levelMod="-1"></options>
+        </move>
+    </moves>
+</class>

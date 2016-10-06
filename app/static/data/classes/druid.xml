@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="druid" source="dungeon world core">
+    <description><![CDATA[<p>Cast your eyes around the fire. What has brought you to these people, stinking of the dust and sweat of the city? Perhaps it is a kindness - do you protect them as the mother bear watches over her cubs? Are they your pack, now? Strange brothers and sisters you have. Whatever your inspiration, they would certainly fail without your sharp senses and sharper claws.</p><p>You are of the sacred spaces; you are born of soil and wear the marks of her spirits on your skin. You may have had a life before, maybe you were a city dweller like them, but not now. You've given up that static shape. Listen to your allies pray to their carved stone gods and polish their silver shells. They speak of the glory they'll find back in that festering town you left behind.</p><p>Their gods are children, their steel is false protection. You walk the old ways, you wear the pelts of the earth itself. You'll take your share of the treasure, but will you ever walk as one of them? Only time will tell.</p>]]></description>
+    <looks>
+        <look type="eyes">
+            <choice>Wise Eyes</choice>
+            <choice>Wild Eyes</choice>
+            <choice>Haunting Eyes</choice>
+        </look>
+        <look type="hair">
+            <choice>Furry Hood</choice>
+            <choice>Messy Hair</choice>
+            <choice>Braided Hair</choice>
+        </look>
+        <look type="clothes">
+            <choice>Ceremonial Garb</choice>
+            <choice>Practical Leathers</choice>
+            <choice>Weathered Hides</choice>
+        </look>
+    </looks>
+    <stats>
+        <hp>6</hp>
+        <damage>d6</damage>
+    </stats>
+    <alignment>
+        <choice name="chaotic">Destroy a symbol of civilization.</choice>
+        <choice name="good">Help something or someone grow.</choice>
+        <choice name="neutral">Eliminate an unnatural menace.</choice>
+    </alignment>
+    <gear load="6">
+        <description>Your load is 6+Str. You carry some token of your land, describe it.</description>
+        <items>
+            <item name="token"></item>
+        </items>
+        <choices>
+            <choice type="defenses" title="Choose your defenses:" choices="1">
+                <option>Hide Armor (1 armor, 1 weight)</option>
+                <option>Wooden Shield (+1 armor, 1 weight)</option>
+            </choice>
+            <choice type="armaments" title="Choose your armament:" choices="1">
+                <option>Shillelagh (close, 2 weight)</option>
+                <option>Staff (close, two-handed, 1 weight)</option>
+                <option>Spear (close, thrown, near, 1 weight)</option>
+            </choice>
+            <choice type="equipment" title="Choose one:" choices="1">
+                <option>Adventuring Gear (5 uses, 1 weight)</option>
+                <option>Poultices and Herbs (2 uses, slow, 1 weight)</option>
+                <option>Halfling Pipeleaf (6 uses, 0 weight)</option>
+            </choice>
+        </choices>
+    </gear>
+    <bonds text="Fill in the name of one of your companions in at least one:">
+        <bond>[BLANK] smells more like prey than a hunter.</bond>
+        <bond>The spirits spoke to me of a great danger that follows [BLANK].</bond>
+        <bond>I have showed [BLANK] a secret rite of the Land.</bond>
+        <bond>[BLANK] has tasted my blood and I theirs. We are bound by it.</bond>
+    </bonds>
+    <race>
+        <choice name="elf">
+            <description>The sap of the elder trees flows within you. In addition to any other attunements, the Great Forest is always considered your land.</description>
+            <name>Hycorax</name>
+            <name>Ethanwe</name>
+            <name>Sinathel</name>
+            <name>Demanor</name>
+            <name>Menoliir</name>
+            <name>Mithralan</name>
+            <name>Taeros</name>
+            <name>Aegor</name>
+        </choice>
+        <choice name="human">
+            <description>As your people learned to bind animals to field and farm, so too are you bound to them. You may always take the shape of any domesticated animal, in addition to your normal options.</description>
+            <name>Elana</name>
+            <name>Obelis</name>
+            <name>Herran</name>
+            <name>Syla</name>
+            <name>Andanna</name>
+            <name>Siobhan</name>
+            <name>Aziz</name>
+            <name>Pelin</name>
+            <name>Sibel</name>
+            <name>Nils</name>
+            <name>Wei</name>
+        </choice>
+        <choice name="halfling">
+            <description>You sing the healing songs of spring and brook. When you make camp, you and your allies heal +1d6.</description>
+            <name>Tanner</name>
+            <name>Dunstan</name>
+            <name>Rose</name>
+            <name>Ivy</name>
+            <name>Robard</name>
+            <name>Mab</name>
+            <name>Thistle</name>
+            <name>Puck</name>
+            <name>Anne</name>
+            <name>Serah</name>
+        </choice>
+    </race>
+    <moves>
+        <move name="Born of the Soil" minLevel="1">
+            <description><![CDATA[<p>You learned your magic in a place whose spirits are strong and ancient and they've marked you as one of their own. No matter where you go, they live within you and allow you to take their shape. Choose one of the following. It is the land to which you are attuned - when shapeshifting you may take the shape of any animal who might live in your Land.</p><p>Chose a tell - a physical attribute that marks you as born of the soil - that reflects the spirit of your land. It may be an animal feature like antlers or leopard's spots or something more general: hair like leaves or eyes of glittering crystal. Your tell remains no matter what shape you take.</p>]]></description>
+            <options name="lands" choices="1" title="Choose one of the following:">
+                <option>The Great Forests</option>
+                <option>The Whispering Plains</option>
+                <option>The Vast Desert</option>
+                <option>The Stinking Mire</option>
+                <option>The River Delta</option>
+                <option>The Depths of the Earth</option>
+                <option>The Sapphire Islands</option>
+                <option>The Open Sea</option>
+                <option>The Towering Mountains</option>
+                <option>The Frozen North</option>
+                <option>The Blasted Wasteland</option>
+            </options>
+        </move>
+        <move name="By Nature Sustained" minLevel="1">
+            <description><![CDATA[<p>You don't need to eat or drink. If a move tells you to mark off a ration just ignore it.</p>]]></description>
+        </move>
+        <move name="Spirit Tongue" minLevel="1">
+            <description><![CDATA[<p>The grunts, barks, chirps, and calls of the creatures of the wild are as language to you. You can understand any animal native to your land or akin to one whose essence you have studied.</p>]]></description>
+        </move>
+        <move name="Shapeshifter" minLevel="1">
+            <description><![CDATA[<p>When you call upon the spirits to change your shape, roll+Wis.</p><ul><li>On a 10+ hold 3.</li><li>On a 7 - 9 hold 2.</li><li>On a miss hold 1 in addition to whatever the GM says.</li></ul><p>You may take on the physical form of any species whose essence you have studied or who lives in your land: you and your possessions meld into a perfect copy of the species' form. You have any innate abilities and weaknesses of the form: claws, wings, gills, breathing water instead of air. You still use your normal stats but some moves may be harder to trigger - a housecat will find it hard to do battle with an ogre. The GM will also tell you one or more moves associated with your new form. Spend 1 hold to make that move. Once you're out of hold, you return to your natural form. At any time, you may spend all your hold and revert to your natural form.</p>]]></description>
+        </move>
+        <move name="Studied Essence" minLevel="1">
+            <description><![CDATA[<p>When you spend time in contemplation of an animal spirit, you may add its species to those you can assume using shapeshifting.</p>]]></description>
+        </move>
+        <move name="Hunter's Brother" minLevel="2">
+            <description><![CDATA[<p>Choose one move from the ranger class list.</p>]]></description>
+            <options type="multiclass" choices="1" levelMod="0">
+                <option class="ranger" />
+            </options>
+        </move>
+        <move name="Red of Tooth and Claw" minLevel="2">
+            <description><![CDATA[<p>When you are in an appropriate animal form (something dangerous) increase your damage to d8.</p>]]></description>
+        </move>
+        <move name="Communion of Whispers" minLevel="2">
+            <description><![CDATA[<p>When you spend time in a place, making note of its resident spirits and calling on the spirits of the land, roll+Wis. You will be granted a vision of significance to you, your allies, and the spirits around you.</p><ul><li>On a 10+ the vision will be clear and helpful to you.</li><li>On a 7 - 9 the vision is unclear, its meaning murky.</li><li>On a miss, the vision is upsetting, frightening, or traumatizing. The GM will describe it. Take -1 forward.</li></ul>]]></description>
+        </move>
+        <move name="Barkskin" minLevel="2">
+            <description><![CDATA[<p>So long as your feet touch the ground you have +1 armor.</p>]]></description>
+        </move>
+        <move name="Eyes of the Tiger" minLevel="2">
+            <description><![CDATA[<p>When you mark an animal (with mud, dirt, or blood) you can see through that animal's eyes as if they were your own, no matter what distance separates you. Only one animal at a time may be marked in this way.</p>]]></description>
+        </move>
+        <move name="Shed" minLevel="2">
+            <description><![CDATA[<p>When you take damage while shapeshifted you may choose to revert to your natural form to negate the damage.</p>]]></description>
+        </move>
+        <move name="Thing-Talker" minLevel="2">
+            <description><![CDATA[<p>You see the spirits in the sand, the sea and the stone. You may now apply your spirit tongue, shapeshifting and studied essence to inanimate natural objects (plants and rocks) or creatures made thereof, as well as animals. Thing-talker forms can be exact copies or can be mobile vaguely humanoid-shaped entities.</p>]]></description>
+        </move>
+        <move name="Formcrafter" minLevel="2">
+            <description><![CDATA[<p>When you shapeshift choose a stat: you take +1 ongoing to rolls using that stat while shifted. The GM will choose a stat, too: you take -1 ongoing to rolls using that stat while shifted.</p>]]></description>
+        </move>
+        <move name="Elemental Mastery" minLevel="2">
+            <description><![CDATA[<p>When you call on the primal spirits of fire, water, earth or air to perform a task for you roll+Wis.</p><ul><li>On a 10+ choose two.</li><li>On a 7 - 9 choose one.</li><li>On a miss, some catastrophe occurs as a result of your calling.<ul><li>The effect you desire comes to pass</li><li>You avoid paying nature's price</li><li>You retain control</li></ul></li></ul>]]></description>
+        </move>
+        <move name="Balance" minLevel="2">
+            <description><![CDATA[<p>When you deal damage, take 1 balance. When you touch someone and channel the spirits of life you may spend balance. For each balance spent, heal 1d4 HP.</p>]]></description>
+        </move>
+        <move name="Embracing No Form" minLevel="6">
+            <description><![CDATA[<p>When you shapeshift, roll 1d4 and add that total to your hold.</p>]]></description>
+        </move>
+        <move name="Doppelganger's Dance" minLevel="6">
+            <description><![CDATA[<p>You are able to study the essence of specific individuals to take their exact form, including men, elves, or the like. Suppressing your tell is possible, but if you do, take -1 ongoing until you return to your own form.</p>]]></description>
+        </move>
+        <move name="Blood and Thunder" minLevel="6" replaces="Red of Tooth and Claw">
+            <description><![CDATA[<p>When you are in an appropriate animal form (something dangerous) increase your damage to d10.</p>]]></description>
+        </move>
+        <move name="The Druid Sleep" minLevel="6">
+            <description><![CDATA[<p>When you take this move, the next opportunity that you have safety and time to spend in an appropriate location, you may attune yourself to a new land. This effect occurs only once and the GM will tell you how long it will take and what cost you must pay. From then on, you are considered to be born of the soil in both lands.</p>]]></description>
+            <options name="land" choices="1">
+                <option>The Great Forests</option>
+                <option>The Whispering Plains</option>
+                <option>The Vast Desert</option>
+                <option>The Stinking Mire</option>
+                <option>The River Delta</option>
+                <option>The Depths of the Earth</option>
+                <option>The Sapphire Islands</option>
+                <option>The Open Sea</option>
+                <option>The Towering Mountains</option>
+                <option>The Frozen North</option>
+                <option>The Blasted Wasteland</option>
+            </options>
+        </move>
+        <move name="World-Talker" minLevel="6" requires="Thing-Talker">
+            <description><![CDATA[<p>You see the patterns that make up the fabric of the world. You may now apply your spirit tongue, shapeshifter and studied essence moves to pure elements?ire, water, air and earth.</p>]]></description>
+        </move>
+        <move name="Stalker's Sister" minLevel="6">
+            <description><![CDATA[<p>Choose one move from the ranger class list.</p>]]></description>
+            <options type="multiclass" levelMod="0" choices="1">
+                <option class="ranger" />
+            </options>
+        </move>
+        <move name="Formshaper" minLevel="6" requires="Formcrafter">
+            <description><![CDATA[<p>You may increase your armor by 1 or deal an additional +1d4 damage while in an animal form. Choose which when you shapeshift.</p>]]></description>
+        </move>
+        <move name="Chimera" minLevel="6">
+            <description><![CDATA[<p>When you shapeshift, you may create a merged form of up to three different shapes. You may be a bear with the wings of an eagle and the head of a ram, for example. Each feature will grant you a different move to make. Your chimera form follows the same rules as shapeshifter otherwise.</p>]]></description>
+        </move>
+        <move name="Weather Weaver" minLevel="6">
+            <description><![CDATA[<p>When you are under open skies when the sun rises the GM will ask you what the weather will be that day. Tell them whatever you like, it comes to pass.</p>]]></description>
+        </move>
+    </moves>
+</class>

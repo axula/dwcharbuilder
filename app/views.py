@@ -8,6 +8,8 @@ from .models import User
 from operator import itemgetter
 import __builtin__, collections, json, re, os, xmltodict
 
+class_directory = '/home/kitka/src/dwcharbuilder/app/static/data/classes'
+
 @lm.user_loader
 def load_user(user_id):
     return User.query.get(user_id)
@@ -46,3 +48,37 @@ def logout():
 @login_required
 def index():
     return "Hello, World!"
+    
+@app.template_filter()
+def makelist(list, *args):
+    if not list:
+        return []
+    elif type(list) != type([]):
+        return [list]
+    else:
+        return list
+    
+@app.route('/<userid>/new')
+@login_required
+def new(userid):
+    user = g.user
+    classes = {}
+    for filename in os.listdir(class_directory):
+        with open(os.path.join(class_directory, filename), 'r') as fd:
+            rawdata = xmltodict.parse(fd.read())
+            classname = rawdata['class']['@name']
+            classes[classname] = filename
+    classes = collections.OrderedDict(sorted(classes.items()))
+        
+    return render_template('new.html', user=user, classes=classes)
+    
+@app.route('/class/new', methods=['GET', 'POST'])
+@login_required
+def class_new():
+    user = g.user
+    file = os.path.join(class_directory, request.form.get('charclass'))
+    with open(file, 'r') as fd:
+        rawdata = xmltodict.parse(fd.read())
+        charclass = rawdata['class']
+        
+    return render_template('new_character.html', user=user, charclass=charclass)

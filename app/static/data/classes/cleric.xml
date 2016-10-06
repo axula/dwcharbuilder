@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="cleric" source="dungeon world core">
+    <description><![CDATA[<p>The lands of Dungeon World are a gods-forsaken mess. They're lousy with the walking dead, beasts of all sorts, and the vast unnatural spaces between safe and temple-blessed civilizations. It is a godless world out there. That's why it needs you.</p><p>Bringing the glory of your god to the heathens isn't just in your nature - it's your calling. It falls to you to proselytize with sword and mace and spell. To cleave deep into the witless heart of the wilds and plant the seed of divinity there. Some say that it is best to keep god close to your heart. You know that's rubbish. God lives at the edge of a blade.</p><p>Show the world who is lord.</p>]]></description>
+    <looks>
+        <look type="body">
+            <choice>Thin Body</choice>
+            <choice>Knobby Body</choice>
+            <choice>Flabby Body</choice>
+        </look>
+        <look type="eyes">
+            <choice>Kind Eyes</choice>
+            <choice>Sharp Eyes</choice>
+            <choice>Sad Eyes</choice>
+        </look>
+        <look type="hair">
+            <choice>Strange Hair</choice>
+            <choice>Tonsure</choice>
+            <choice>Bald</choice>
+        </look>
+        <look type="clothes">
+            <choice>Flowing Robes</choice>
+            <choice>Habit</choice>
+            <choice>Common Garb</choice>
+        </look>
+    </looks>
+    <stats>
+        <hp>8</hp>
+        <damage>d6</damage>
+    </stats>
+    <alignment>
+        <choice name="good">Endanger yourself to heal another.</choice>
+        <choice name="lawful">Endanger yourself following the precepts of your church or god.</choice>
+        <choice name="evil">Harm another to prove the superiority of your church or god.</choice>
+    </alignment>
+    <gear load="10">
+        <description>Your load is 10+Str. You carry some symbol of the divine, describe it.</description>
+        <items>
+            <item name="symbol"></item>
+            <item>Dungeon Rations (5 uses, 1 weight)</item>
+        </items>
+        <choices>
+            <choice type="defenses" title="Choose your defenses:" choices="1">
+                <option>Chainmail (1 armor, 1 weight)</option>
+                <option>Shield (+1 armor, 2 weight)</option>
+            </choice>
+            <choice type="armaments" title="Choose your armament:" choices="1">
+                <option>Warhammer (close, 1 weight)</option>
+                <option>Mace (close, 1 weight)</option>
+                <option>Staff (close, two-handed, 1 weight) and bandages (0 weight)</option>
+            </choice>
+            <choice type="equipment" title="Choose one:" choices="1">
+                <option>Adventuring gear (1 weight) and dungeon rations (5 uses, 1 weight)</option>
+                <option>Healing potion (0 weight)</option>
+            </choice>
+        </choices>
+    </gear>
+    <bonds text="Fill in the name of one of your companions in at least one:">
+        <bond>[BLANK] has insulted my deity; I do not trust them.</bond>
+        <bond>[BLANK] is a good and faithful person; I trust them implicitly.</bond>
+        <bond>[BLANK] is in constant danger, I will keep them safe.</bond>
+        <bond>I am working on converting [BLANK] to my faith.</bond>
+    </bonds>
+    <race>
+        <choice name="dwarf">
+            <description>You are one with stone. When you commune you are also granted a special version of Words of the Unspeaking as a rote which only works on stone.</description>
+            <name>Durga</name>
+            <name>Aelfar</name>
+            <name>Gerda</name>
+            <name>Rurgosh</name>
+            <name>Bjorn</name>
+            <name>Drummond</name>
+            <name>Helga</name>
+            <name>Siggrun</name>
+            <name>Freya</name>
+        </choice>
+        <choice name="human">
+            <description>Your faith is diverse. Choose one wizard spell. You can cast and be granted that spell as if it was a cleric spell.</description>
+            <name>Wesley</name>
+            <name>Brinton</name>
+            <name>Jon</name>
+            <name>Sara</name>
+            <name>Hawthorn</name>
+            <name>Elise</name>
+            <name>Clarke</name>
+            <name>Lenore</name>
+            <name>Piotr</name>
+            <name>Dahlia</name>
+            <name>Carmine</name>
+        </choice>
+    </race>
+    <moves>
+        <move name="Deity" minLevel="1">
+            <description><![CDATA[<p>You serve and worship some deity or power which grants you spells. Give your god a name (maybe Helferth, Sucellus, Zorica or Krugon the Bleak).</p>]]></description>
+            <options name="domain" title="Choose your deity's domain:" choices="1">
+                <option>Healing and Restoration</option>
+                <option>Bloody Conquest</option>
+                <option>Civilization</option>
+                <option>Knowledge and Hidden Things</option>
+                <option>The Downtrodden and Forgotten</option>
+                <option>What Lies Beneath</option>
+            </options>
+            <options name="precept" title="Choose one precept of your religion:" choices="1">
+                <option>Your religion preaches the sanctity of suffering, add Petition: Suffering</option>
+                <option>Your religion is cultish and insular, add Petition: Gaining Secrets</option>
+                <option>Your religion has important sacrificial rites, add Petition: Offering</option>
+                <option>Your religion believes in trial by combat, add Petition: Personal Victory</option>
+            </options>
+        </move>
+        <move name="Divine Guidance" minLevel="1">
+            <description><![CDATA[<p>When you <b>petition your deity according to the precept of your religion</b>, you are granted some useful knowledge or boon related to your deity's domain. The GM will tell you what.</p>]]></description>
+        </move>
+        <move name="Turn Undead" minLevel="1">
+            <description><![CDATA[<p>When you hold your holy symbol aloft and call on your deity for protection, roll+Wis.</p><ul><li>On a 7+, so long as you continue to pray and brandish your holy symbol, no undead may come within reach of you.</li><li>On a 10+, you also momentarily daze intelligent undead and cause mindless undead to flee. Aggression breaks the effects and they are able to act as normal. Intelligent undead may still find ways to harry you from afar. They're clever like that.</li></ul>]]></description>
+        </move>
+        <move name="Commune" minLevel="1">
+            <description><![CDATA[<p>When you spend uninterrupted time (an hour or so) in quiet communion with your deity, you:</p><ul><li>Lose any spells already granted to you.</li><li>Are granted new spells of your choice whose total levels don't exceed your own level+1, and none of which is a higher level than your own level.</li><li>Prepare all of your rotes, which never count against your limit.</li></ul>]]></description>
+        </move>
+        <move name="Cast a Spell" minLevel="1">
+            <description><![CDATA[<p>When you unleash a spell granted to you by your deity, roll+Wis.</p><ul><li>On a 10+, the spell is successfully cast and your deity does not revoke the spell, so you may cast it again.</li><li>On a 7-9, the spell is cast, but choose one:<ul><li>You draw unwelcome attention or put yourself in a spot. The GM will tell you how.</li><li>Your casting distances you from your deity - take -1 ongoing to cast a spell until the next time you commune.</li><li>After you cast it, the spell is revoked by your deity. You cannot cast the spell again until you commune and have it granted to you.</li></ul></li></ul><p>Note that maintaining spells with ongoing effects will sometimes cause a penalty to your roll to cast a spell.</p>]]></description>
+        </move>
+        <move name="Chosen One" minLevel="2">
+            <description><![CDATA[<p>Choose one spell. You are granted that spell as if it was one level lower.</p>]]></description>
+        </move>
+        <move name="Invigorate" minLevel="2">
+            <description><![CDATA[<p>When you heal someone they take +2 forward to their damage.</p>]]></description>
+        </move>
+        <move name="The Scales of Life and Death" minLevel="2">
+            <description><![CDATA[<p>When <b>someone takes their last breath in your presence</b>, they take +1 to the roll.</p>]]></description>
+        </move>
+        <move name="Serenity" minLevel="2">
+            <description><![CDATA[<p>When you cast a spell you ignore the first -1 penalty from ongoing spells.</p>]]></description>
+        </move>
+        <move name="First Aid" minLevel="2">
+            <description><![CDATA[<p>Cure Light Wounds is a rote for you, and therefore doesn't count against your limit of granted spells.</p>]]></description>
+        </move>
+        <move name="Divine Intervention" minLevel="2">
+            <description><![CDATA[<p>When you commune you get 1 hold and lose any hold you already had. Spend that hold when you or an ally takes damage to call on your deity, they intervene with an appropriate manifestation (a sudden gust of wind, a lucky slip, a burst of light) and negate the damage.</p>]]></description>
+        </move>
+        <move name="Penitent" minLevel="2">
+            <description><![CDATA[<p>When you <b>take damage and embrace the pain</b>, you may take +1d4 damage (ignoring armor). If you do, take +1 forward to cast a spell.</p>]]></description>
+        </move>
+        <move name="Empower" minLevel="2">
+            <description><![CDATA[<p>When you cast a spell, on a 10+ you have the option of choosing from the 7-9 list. If you do, you may choose one of these effects as well:<p><ul><li>The spell's effects are doubled</li><li>The spell's targets are doubled</li></ul>]]></description>
+        </move>
+        <move name="Orison for Guidance" minLevel="2">
+            <description><![CDATA[<p>When you <b>sacrifice something of value to your deity and pray for guidance</b>, your deity tells you what it would have you do. If you do it, mark experience.</p>]]></description>
+        </move>
+        <move name="Divine Protection" minLevel="2">
+            <description><![CDATA[<p>When you wear no armor or shield you get 2 armor.</p>]]></description>
+        </move>
+        <move name="Devoted Healer" minLevel="2">
+            <description><![CDATA[<p>When you heal someone else of damage, add your level to the amount of damage healed.</p>]]></description>
+        </move>
+        <move name="Anointed" minLevel="6" requires="Chosen One">
+            <description><![CDATA[<p>Choose one spell in addition to the one you picked for chosen one. You are granted that spell as if it was one level lower.</p>]]></description>
+        </move>
+        <move name="Apotheosis" minLevel="6">
+            <description><![CDATA[<p>The first time you spend time in prayer as appropriate to your god after taking this move, choose a feature associated with your deity (rending claws, wings of sapphire feathers, an all-seeing third eye, etc.). When you emerge from prayer, you permanently gain that physical feature.</p>]]></description>
+        </move>
+        <move name="Reaper" minLevel="6">
+            <description><![CDATA[<p>When you take time after a conflict to dedicate your victory to your deity and deal with the dead, take +1 forward.</p>]]></description>
+        </move>
+        <move name="Providence" minLevel="6" replaces="Serenity">
+            <description><![CDATA[<p>You ignore the -1 penalty from two spells you maintain.</p>]]></description>
+        </move>
+        <move name="Greater First Aid" minLevel="6" requires="First Aid">
+            <description><![CDATA[<p>Cure Moderate Wounds is a rote for you, and therefore doesn't count against your limit of granted spells</p>]]></description>
+        </move>
+        <move name="Divine Invincibility" minLevel="6" replaces="Divine Intervention">
+            <description><![CDATA[<p>When you commune you gain 2 hold and lose any hold you already had. Spend that hold when you or an ally takes damage to call on your deity, who intervenes with an appropriate manifestation (a sudden gust of wind, a lucky slip, a burst of light) and negates the damage.</p>]]></description>
+        </move>
+        <move name="Martyr" minLevel="6" replaces="Penitent">
+            <description><![CDATA[<p>When you take damage and embrace the pain, you may take +1d4 damage (ignoring armor). If you do, take +1 forward to cast a spell and add your level to any damage done or healed by the spell.</p>]]></description>
+        </move>
+        <move name="Divine Armor" minLevel="6" replaces="Divine Protection">
+            <description><![CDATA[<p>When you wear no armor or shield you get 3 armor.</p>]]></description>
+        </move>
+        <move name="Greater Empower" minLevel="6" replaces="Empower">
+            <description><![CDATA[<p>When you cast a spell, on a 10-11 you have the option of choosing from the 7-9 list. If you do, you may choose one of these effects as well. On a 12+ you get to choose one of these effects for free.</p><ul><li>The spell's effects are doubled</li><li>The spell's targets are doubled</li></ul>]]></description>
+        </move>
+        <move name="Multiclass Dabbler" minLevel="6">
+            <description><![CDATA[<p>Get one move from another class. Treat your level as one lower for choosing the move.</p>]]></description>
+            <options type="multiclass" levelMod="-1"></options>
+        </move>
+    </moves>
+    <spells>
+        <spell name="Light" level="rote">
+            <description><![CDATA[<p>An item you touch glows with divine light, about as bright as a torch. It gives off no heat or sound and requires no fuel but is otherwise like a mundane torch. You have complete control of the color of the flame. The spell lasts as long as it is in your presence.</p>]]></description>
+        </spell>
+        <spell name="Sanctify" level="rote">
+            <description><![CDATA[<p>Food or water you hold in your hands while you cast this spell is consecrated by your deity. In addition to now being holy or unholy, the affected substance is purified of any mundane spoilage.</p>]]></description>
+        </spell>
+        <spell name="Guidance" level="rote">
+            <description><![CDATA[<p>The symbol of your deity appears before you and gestures towards the direction or course of action your deity would have you take then disappears. The message is through gesture only; your communication through this spell is severely limited.</p>]]></description>
+        </spell>
+        <spell name="Bless" level="1" tags="Ongoing">
+            <description><![CDATA[<p>Your deity smiles upon a combatant of your choice. They take +1 ongoing so long as battle continues and they stand and fight. While this spell is ongoing you take -1 to cast a spell.</p>]]></description>
+        </spell>
+        <spell name="Cure Light Wounds" level="1">
+            <description><![CDATA[<p>At your touch wounds scab and bones cease to ache. Heal an ally you touch of 1d8 damage.</p>]]></description>
+        </spell>
+        <spell name="Detect Alignment" level="1">
+            <description><![CDATA[<p>When you cast this spell choose an alignment: Good, Evil, Lawful, or Chaotic. One of your senses is briefly able to detect that alignment. The GM will tell you what here is of that alignment.</p>]]></description>
+        </spell>
+        <spell name="Cause Fear" level="1" tags="Ongoing">
+            <description><![CDATA[<p>Choose a target you can see and a nearby object. The target is afraid of the object so long as you maintain the spell. Their reaction is up to them: flee, panic, beg, fight. While this spell is ongoing you take -1 to cast a spell. You cannot target entities with less than animal intelligence (magical constructs, undead, automatons, and the like).</p>]]></description>
+        </spell>
+        <spell name="Magic Weapon" level="1" tags="Ongoing">
+            <description><![CDATA[<p>The weapon you hold while casting does +1d4 damage until you dismiss this spell. While this spell is ongoing you take -1 to cast a spell.</p>]]></description>
+        </spell>
+        <spell name="Sanctuary" level="1">
+            <description><![CDATA[<p>As you cast this spell, you walk the perimeter of an area, consecrating it to your deity. As long as you stay within that area you are alerted whenever someone acts with malice within the sanctuary (including entering with harmful intent). Anyone who receives healing within a sanctuary heals +1d4 HP.</p>]]></description>
+        </spell>
+        <spell name="Speak With Dead" level="1">
+            <description><![CDATA[<p>A corpse converses with you briefly. It will answer any three questions you pose to it to the best of the knowledge it had in life and the knowledge it gained in death.</p>]]></description>
+        </spell>
+        <spell name="Animate Dead" level="3" tags="Ongoing">
+            <description><![CDATA[<p>You invoke a hungry spirit to possess a recently-dead body and serve you. This creates a zombie that follows your orders to the best of its limited abilities. Treat the zombie as a character, but with access to only the basic moves. It has a +1 modifier for all stats and 1 HP. The zombie also gets your choice of 1d4 of these traits:</p><ul><li>It's talented. Give one stat a +2 modifier.</li><li>It's durable. It has +2 HP for each level you have.</li><li>It has a functioning brain and can complete complex tasks.</li><li>It does not appear obviously dead, at least for a day or two.</li></ul><p>The zombie lasts until it is destroyed by taking damage in excess of its HP, or until you end the spell. While this spell is ongoing you take -1 to cast a spell.</p>]]></description>
+        </spell>
+        <spell name="Cure Moderate Wounds" level="3">
+            <description><![CDATA[<p>You staunch bleeding and set bones through magic. Heal an ally you touch of 2d8 damage.</p>]]></description>
+        </spell>
+        <spell name="Darkness" level="" tags="Ongoing">
+            <description><![CDATA[<p>Choose an area you can see: it's filled with supernatural darkness and shadow. While this spell is ongoing you take -1 to cast a spell.</p>]]></description>
+        </spell>
+        <spell name="Resurrection" level="3">
+            <description><![CDATA[<p>Tell the GM you would like to resurrect a corpse whose soul has not yet fully departed this world. Resurrection is always possible, but the GM will give you one or more (possibly all) of these conditions to fulfill:</p><ul><li>It's going to take days/weeks/months</li><li>You must get help from</li><li>It will require a lot of money</li><li>You must sacrifice to do it</li></ul><p>The GM may, depending on the circumstances, allow you to resurrect the corpse now, with the understanding that the conditions must be met before it's permanent, or require you to meet the conditions before the corpse is resurrected.</p>]]></description>
+        </spell>
+        <spell name="Hold Person" level="3">
+            <description><![CDATA[<p>Choose a person you can see. Until you cast a spell or leave their presence they cannot act except to speak. This effect ends immediately if the target takes damage from any source.</p>]]></description>
+        </spell>
+        <spell name="Revelation" level="5">
+            <description><![CDATA[<p>Your deity answers your prayers with a moment of perfect understanding. The GM will shed light on the current situation. When acting on the information, you take +1 forward.</p>]]></description>
+        </spell>
+        <spell name="Cure Critical Wounds" level="5">
+            <description><![CDATA[<p>Heal an ally you touch of 3d8 damage.</p>]]></description>
+        </spell>
+        <spell name="Divination" level="5">
+            <description><![CDATA[<p>Name a person, place, or thing you want to learn about. Your deity grants you visions of the target, as clear as if you were there.</p>]]></description>
+        </spell>
+        <spell name="Contagion" level="5" tags="Ongoing">
+            <description><![CDATA[<p>Choose a creature you can see. Until you end this spell, the target suffers from a disease of your choice. While this spell is ongoing you take -1 to cast a spell.</p>]]></description>
+        </spell>
+        <spell name="Words of the Unspeaking" level="5">
+            <description><![CDATA[<p>With a touch you speak to the spirits within things. The non-living object you touch answers three questions you pose, as best it can.</p>]]></description>
+        </spell>
+        <spell name="True Seeing" level="5" tags="Ongoing">
+            <description><![CDATA[<p>Your vision is opened to the true nature of everything you lay your eyes on. You pierce illusions and see things that have been hidden. The GM will describe the area before you ignoring any illusions and falsehoods, magical or otherwise. While this spell is ongoing you take -1 to cast a spell.</p>]]></description>
+        </spell>
+        <spell name="Trap Soul" level="5">
+            <description><![CDATA[<p>You trap the soul of a dying creature within a gem. The trapped creature is aware of its imprisonment but can still be manipulated through spells, parley, and other effects. All moves against the trapped creature are at +1. You can free the soul at any time but it can never be recaptured once freed.</p>]]></description>
+        </spell>
+        <spell name="Word of Recall" level="7">
+            <description><![CDATA[<p>Choose a word. The first time after casting this spell that you speak the chosen word, you and any allies touching you when you cast the spell are immediately returned to the exact spot where you cast the spell. You can only maintain a single location; casting Word of Recall again before speaking the word replaces the earlier spell.</p>]]></description>
+        </spell>
+        <spell name="Heal" level="7">
+            <description><![CDATA[<p>Touch an ally and you may heal their damage a number of points up to your maximum HP.</p>]]></description>
+        </spell>
+        <spell name="Harm" level="7">
+            <description><![CDATA[<p>Touch an enemy and strike them with divine wrath - deal 2d8 damage to them and 1d6 damage to yourself. This damage ignores armor.</p>]]></description>
+        </spell>
+        <spell name="Sever" level="7" tags="Ongoing">
+            <description><![CDATA[<p>Choose an appendage on the target such as an arm, tentacle, or wing. The appendage is magically severed from their body, causing no damage but considerable pain. Missing an appendage may, for example, keep a winged creature from flying, or a bull from goring you on its horns. While this spell is ongoing you take -1 to cast a spell.</p>]]></description>
+        </spell>
+        <spell name="Mark of Death" level="7">
+            <description><![CDATA[<p>Pray for rain - or sun, wind, or snow. Within a day or so, your god will answer. The weather will change according to your will and last a handful of days.</p>]]></description>
+        </spell>
+        <spell name="Storm of Vengeance" level="9">
+            <description><![CDATA[<p>Your deity brings the unnatural weather of your choice to pass. Rain of blood or acid, clouds of souls, wind that can carry away buildings, or any other weather you can imagine: ask and it shall come.</p>]]></description>
+        </spell>
+        <spell name="Repair" level="9">
+            <description><![CDATA[<p>Choose one event in the target's past. All effects of that event, including damage, poison, disease, and magical effects, are ended and repaired. HP and diseases are healed, poisons are neutralized, magical effects are ended.</p>]]></description>
+        </spell>
+        <spell name="Divine Presence" level="9" tags="Ongoing">
+            <description><![CDATA[<p>Every creature must ask your leave to enter your presence, and you must give permission aloud for them to enter. Any creature without your leave takes an extra 1d10 damage whenever they take damage in your presence. While this spell is ongoing you take -1 to cast a spell.</p>]]></description>
+        </spell>
+        <spell name="Consume Unlife" level="9">
+            <description><![CDATA[<p>The mindless undead creature you touch is destroyed and you steal its death energy to heal yourself or the next ally you touch. The amount of damage healed is equal to the HP that the creature had remaining before you destroyed it.</p>]]></description>
+        </spell>
+        <spell name="Plague" level="9" tags="Ongoing">
+            <description><![CDATA[<p>Name a city, town, encampment, or other place where people live. As long as this spell is active that place is beset by a plague appropriate to your deity's domains (locusts, death of the first born, etc.) While this spell is ongoing you take -1 to cast a spell.</p>]]></description>
+        </spell>
+    </spells>
+</class>

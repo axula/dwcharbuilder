@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="barbarian" source="dungeon world core">
+    <description></description>
+    <looks>
+        <look type="body">
+            <choice>Mighty thews</choice>
+            <choice>Long Shanks</choice>
+            <choice>Scrawny</choice>
+            <choice>Supple</choice>
+        </look>
+        <look type="eyes">
+            <choice>Tormented Eyes</choice>
+            <choice>Haunted Eyes</choice>
+            <choice>Wild Eyes</choice>
+            <choice>Shrouded Eyes</choice>
+        </look>
+        <look type="decoration">
+            <choice>Tattoos</choice>
+            <choice>Bejeweled</choice>
+            <choice>Unmarred</choice>
+        </look>
+        <look type="clothes">
+            <choice>Scraps</choice>
+            <choice>Silks</choice>
+            <choice>Scavenger's Outfit</choice>
+            <choice>Weather-inappropriate</choice>
+        </look>
+    </looks>
+    <stats>
+        <hp>8</hp>
+        <damage>d10</damage>
+    </stats>
+    <alignment>
+        <choice name="chaotic">Eschew a convention of the civilized world.</choice>
+        <choice name="neutral">Teach someone the ways of your people.</choice>
+    </alignment>
+    <gear load="8">
+        <description>Your load is 8+Str. You carry some token of where you've travelled or where you're from.</description>
+        <items>
+            <item name="token"></item>
+            <item>Dungeon Rations (5 uses, 1 weight)</item>
+            <item>Dagger (hand, 1 weight)</item>
+        </items>
+        <choices>
+            <choice type="weapon" title="Choose your defenses:" choices="1">
+                <option>Axe (close, 1 weight)</option>
+                <option>Two handed sword (close, +1 damage, 2 weight)</option>
+            </choice>
+            <choice type="equipment" title="Choose one:" choices="1">
+                <option>Adventuring Gear (1 weight) and dungeon rations (5 uses, 1 weight)</option>
+                <option>Chainmail (1 armor, 1 weight)</option>
+            </choice>
+        </choices>
+    </gear>
+    <bonds text="Fill in the name of one of your companions in at least one:">
+        <bond>[BLANK] is puny and foolish, but amusing to me.</bond>
+        <bond>[BLANK]'s ways are strange and confusing.</bond>
+        <bond>[BLANK] is always getting into trouble - I must protect them from themselves.</bond>
+        <bond>[BLANK] shares my hunger for glory; the earth will tremble at our passing!</bond>
+    </bonds>
+    <race>
+        <choice name="outsider">
+            <description>You may be elf, dwarf, halfling, or human, but you and your people are not from around here. At the beginning of each session, the GM will ask you something about your homeland, why you left, or what you left behind. If you answer them, mark XP.</description>
+            <name>Gorm</name>
+            <name>Si-Yi</name>
+            <name>Priscilla</name>
+            <name>Sen</name>
+            <name>Xia</name>
+            <name>Anneira</name>
+            <name>Haepha</name>
+            <name>Lur</name>
+            <name>Shar</name>
+            <name>Korrin</name>
+            <name>Nkosi</name>
+            <name>Fafnir</name>
+            <name>Qua</name>
+            <name>Sacer</name>
+            <name>Vercin'geto</name>
+            <name>Barbozar</name>
+            <name>Clovis</name>
+            <name>Frael</name>
+            <name>Thra raxes</name>
+            <name>Sillius</name>
+            <name>Sha Sheena</name>
+            <name>Khamisi</name>
+            <title>the Glorious</title>
+            <title>the Hungry</title>
+            <title>the Irascible</title>
+            <title>the Undefeated</title>
+            <title>the Gluttonous</title>
+            <title>Foesmasher</title>
+            <title>Bonebreaker</title>
+            <title>the Mirthful</title>
+            <title>the Melancholic</title>
+            <title>All Mighty</title>
+            <title>the Giant</title>
+            <title>the Triumphant</title>
+        </choice>
+    </race>
+    <moves>
+        <move name="Herculean Appetites" minLevel="1">
+            <description><![CDATA[<p>Others may content themselves with just a taste of wine, or dominion over a servant or two, but you want more. Choose two appetites. While pursuing one of your appetites if you would roll for a move, instead of rolling 2d6 you roll 1d6+1d8. If the d6 is the higher die of the pair, the GM will also introduce a complication or danger that comes about due to your heedless pursuits.</p>]]></description>
+            <options name="appetite" choices="1" title="Choose one of the following:">
+                <option>Pure destruction</option>
+                <option>Power over others</option>
+                <option>Mortal pleasures</option>
+                <option>Conquest</option>
+                <option>Riches and property</option>
+                <option>Fame and glory</option>
+            </options>
+        </move>
+        <move name="The Upper Hand" minLevel="1">
+            <description><![CDATA[<p>You take +1 ongoing to last breath rolls. When you take your last breath, on a 7-9 you make an offer to Death in return for your life. If Death accepts he will return you to life. If not, you die.</p>]]></description>
+        </move>
+        <move name="Musclebound" minLevel="1">
+            <description><![CDATA[<p>While you wield a weapon it gains the forceful and messy tags.</p>]]></description>
+        </move>
+        <move name="What Are You Waiting For?" minLevel="1">
+            <description><![CDATA[<p>When you cry out a challenge to your enemies, roll+Con.</p><ul><li>On a 10+ they treat you as the most obvious threat to be dealt with and ignore your companions, take +2 damage ongoing against them.</li><li>On a 7-9 only a few (the weakest or most foolhardy among them) fall prey to your taunting.</li></ul>]]></description>
+            <options name="challenge" choices="1" title="Choose one of these to start with:">
+                <option name="Full Plate and Packing Steel">You ignore the clumsy tag on armor you wear.</option>
+                <option name="Unencumbered, Unharmed">So long as you are below your Load and neither wear armor nor carry a shield, take +1 armor.</option>
+            </options>
+        </move>
+        <move name="Still Hungry" minLevel="2">
+            <description><![CDATA[<p>Choose an additional appetite.</p>]]></description>
+            <options name="appetite" choices="1" title="Choose one of the following:">
+                <option>Pure destruction</option>
+                <option>Power over others</option>
+                <option>Mortal pleasures</option>
+                <option>Conquest</option>
+                <option>Riches and property</option>
+                <option>Fame and glory</option>
+            </options>
+        </move>
+        <move name="Appetite for Destruction" minLevel="2">
+            <description><![CDATA[<p>Take a move from the fighter, bard or thief class list. You may not take multiclass moves from those classes.</p>]]></description>
+            <options type="multiclass" choices="1" levelMod="0">
+                <option class="fighter" />
+                <option class="bard" />
+                <option class="thief" />
+            </options>
+        </move>
+        <move name="My Love For You Is Like a Truck" minLevel="2">
+            <description><![CDATA[<p>When you perform a feat of strength, name someone present whom you have impressed and take +1 forward to parley with them.</p>]]></description>
+        </move>
+        <move name="What Is Best In Life" minLevel="2">
+            <description><![CDATA[<p>At the end of a session, if during this session you have crushed your enemies, seen them driven before you, or have heard the lamentations of their kinfolk mark XP.</p>]]></description>
+        </move>
+        <move name="Wide Wanderer" minLevel="2">
+            <description><![CDATA[<p>You've traveled the wide world over. When you arrive someplace ask the GM about any important traditions, rituals, and so on, they'll tell you what you need to know.</p>]]></description>
+        </move>
+        <move name="Usurper" minLevel="2">
+            <description><![CDATA[<p>When you prove yourself superior to a person in power, take +1 forward with their followers, underlings, and hangers on.</p>]]></description>
+        </move>
+        <move name="Khan of Khans" minLevel="2">
+            <description><![CDATA[<p>Your hirelings always accept the gratuitous fulfillment of one of your appetites as payment.</p>]]></description>
+        </move>
+        <move name="Samson" minLevel="2">
+            <description><![CDATA[<p>You may take a debility to immediately break free of any physical or mental restraint.</p>]]></description>
+        </move>
+        <move name="Smash!" minLevel="2">
+            <description><![CDATA[<p>When you hack and slash, on a 12+ deal your damage and choose something physical your target has (a weapon, their position, a limb): they lose it.</p>]]></description>
+        </move>
+        <move name="Indestructible Hunger" minLevel="2">
+            <description><![CDATA[<p>When you take damage you can choose to take 1 ongoing until you sate one of your appetites instead of taking the damage. If you already have this penalty you cannot choose this option.</p>]]></description>
+        </move>
+        <move name="Eye for Weakness" minLevel="2">
+            <description><![CDATA[<p>When you discern realities add "What here is weak or vulnerable?" to the list of questions you can ask.</p>]]></description>
+        </move>
+        <move name="On the Move" minLevel="2">
+            <description><![CDATA[<p>When you defy a danger caused by movement (maybe falling off a narrow bridge or rushing past an armed guard) take +1.</p>]]></description>
+        </move>
+        <move name="A Good Day to Die" minLevel="6">
+            <description><![CDATA[<p>As long as you have less than your Con in current HP (or 1, whichever is higher) take +1 ongoing.</p>]]></description>
+        </move>
+        <move name="Kill 'em All" minLevel="6" requires="Appetite for Destruction">
+            <description><![CDATA[<p>Take another move from the fighter, bard or thief class list. You may not take multiclass moves from those classes.</p>]]></description>
+        </move>
+        <move name="War Cry" minLevel="6">
+            <description><![CDATA[<p>When you enter battle with a show of force (a shout, a rallying cry, a battle dance) roll+Cha.</p><ul><li>On a 10+ both</li><li>On a 7-9 one or the other.</li><li><ul><li>Your allies are rallied and take +1 forward</li><li>Your enemies feel fear and act accordingly (avoiding you, hiding, attacking with fear driven abandon)</li></ul></li></ul>]]></description>
+        </move>
+        <move name="Mark of Might" minLevel="6">
+            <description><![CDATA[<p>When you take this move and spend some uninterrupted time reflecting on your past glories you may mark yourself with a symbol of your power (a long braid tied with bells, ritual scars or tattoos, etc.) Any intelligent mortal creature who sees this symbol knows instinctively that you are a force to be reckoned with and treats you appropriately.</p>]]></description>
+        </move>
+        <move name="More! Always More!" minLevel="6">
+            <description><![CDATA[<p>When you satisfy an appetite to the extreme (destroying something unique and significant, gaining enormous fame, riches, power, etc.) you may choose to resolve it. Cross it off the list and mark XP. While you may pursue that appetite again, you no longer feel the burning desire you once did. In its place, choose a new appetite from the list or write your own.</p>]]></description>
+        </move>
+        <move name="The One Who Knocks" minLevel="6">
+            <description><![CDATA[<p>When you defy danger, on a 12+ you turn the danger back on itself, the GM will describe how.</p>]]></description>
+        </move>
+        <move name="Healthy Distrust" minLevel="6">
+            <description><![CDATA[<p>Whenever the unclean magic wielded by mortal men causes you to defy danger, treat any result of 6 as a 7-9.</p>]]></description>
+        </move>
+        <move name="For the Blood God" minLevel="6">
+            <description><![CDATA[<p>You are initiated in the old ways, the ways of sacrifice. Choose something your gods (or the ancestor spirits, or your totem, etc) value - gold, blood, bones or the like. When you sacrifice those things as per your rites and rituals, roll+Wis.</p><ul><li>On a 10+ the GM will grant you insight into your current trouble or a boon to help you.</li><li>On a 7-9 the sacrifice is not enough and your gods take of your flesh as well, but still grant you some insight or boon.</li><li>On a miss, you earn the ire of the fickle spirits.</li></ul>]]></description>
+        </move>
+    </moves>
+</class>

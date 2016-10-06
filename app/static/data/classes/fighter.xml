@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="fighter" source="dungeon world core">
+    <description><![CDATA[<p>It's a thankless job - living day to day by your armor and the skill of your arm. To dive heedlessly into danger. They won't be playing golden horns for the time you took that knife to the ribs for them in the bar in Bucksberg. No flock of angels to sing of the time you dragged them, still screaming, from the edge of the Pits of Madness, no.</p><p>Forget them.</p><p>You do this for the guts and the glory. The scream of battle and the hot, hot blood of it. You are a beast of iron. Your friends may carry blades of forged steel but, fighter, you are steel. While your traveling companions might moan about their wounds over a campfire in the wilderness, you bear your scars with pride.</p><p>You are the wall - let every danger smash itself to nothing on you. In the end, you'll be the last one standing.</p>]]></description>
+    <looks>
+        <look type="body">
+            <choice>Built Body</choice>
+            <choice>Lithe Body</choice>
+            <choice>Ravaged Body</choice>
+        </look>
+        <look type="eyes">
+            <choice>Hard Eyes</choice>
+            <choice>Dead Eyes</choice>
+            <choice>Eager Eyes</choice>
+        </look>
+        <look type="hair">
+            <choice>Wild Hair</choice>
+            <choice>Shorn Hair</choice>
+            <choice>Battered Helm</choice>
+        </look>
+        <look type="skin">
+            <choice>Calloused Skin</choice>
+            <choice>Tanned Skin</choice>
+            <choice>Scarred Skin</choice>
+        </look>
+    </looks>
+    <stats>
+        <hp>10</hp>
+        <damage>d10</damage>
+    </stats>
+    <alignment>
+        <choice name="good">Defend those weaker than you.</choice>
+        <choice name="neutral">Defeat a worthy opponent.</choice>
+        <choice name="evil">Kill a defenseless or surrendered enemy.</choice>
+    </alignment>
+    <gear load="12">
+        <description>Your load is 12+Str. You carry your signature weapon, describe it:</description>
+        <items>
+            <item name="weapon"></item>
+            <item>Dungeon Rations (5 uses, 1 weight)</item>
+        </items>
+        <choices>
+            <choice type="defenses" title="Choose your defenses:" choices="1">
+                <option>Chainmail (1 armor, 1 weight) and adventuring gear (1 weight)</option>
+                <option>Scale armor (2 armor, 3 weight)</option>
+            </choice>
+            <choice type="equipment" title="Choose two:" choices="2">
+                <option>2 Healing potions (0 weight)</option>
+                <option>Shield (+1 armor, 2 weight)</option>
+                <option>Antitoxin (0 weight), dungeon rations (1 weight), and poultices and herbs (1 weight)</option>
+                <option>22 coins</option>
+            </choice>
+        </choices>
+    </gear>
+    <bonds text="Fill in the name of one of your companions in at least one:">
+        <bond>[BLANK] owes me their life, whether they admit it or not.</bond>
+        <bond>I have sworn to protect [BLANK].</bond>
+        <bond>I worry about the ability of [BLANK] to survive in the dungeon.</bond>
+        <bond>[BLANK] is soft, but I will make them hard like me.</bond>
+    </bonds>
+    <race>
+        <choice name="dwarf">
+            <description><![CDATA[When you <b>share a drink with someone</b>, you may parley with them using CON instead of CHA.]]></description>
+            <name>Ozruk</name>
+            <name>Surtur</name>
+            <name>Brunhilda</name>
+            <name>Annika</name>
+            <name>Janos</name>
+            <name>Greta</name>
+            <name>Dim</name>
+            <name>Rundrig</name>
+            <name>Jarl</name>
+            <name>Xotoq</name>
+        </choice>
+        <choice name="elf">
+            <description>Choose one weapon - you can always treat weapons of that type as if they had the precise tag.</description>
+            <name>Elohiir</name>
+            <name>Sharaseth</name>
+            <name>Hasrith</name>
+            <name>Shevaral</name>
+            <name>Cadeus</name>
+            <name>Eldar</name>
+            <name>Kithracet</name>
+            <name>Thelian</name>
+        </choice>
+        <choice name="human">
+            <description>Once per battle you may reroll a single damage roll (yours or someone else's).</description>
+            <name>Hawke</name>
+            <name>Rudiger</name>
+            <name>Gregor</name>
+            <name>Brianne</name>
+            <name>Walton</name>
+            <name>Castor</name>
+            <name>Shanna</name>
+            <name>Ajax</name>
+            <name>Hob</name>
+        </choice>
+        <choice name="halfling">
+            <description><![CDATA[When you defy danger and <b>use your small size to your advantage</b>, take +1.]]></description>
+            <name>Finnegan</name>
+            <name>Olive</name>
+            <name>Randolph</name>
+            <name>Bartleby</name>
+            <name>Aubrey</name>
+            <name>Baldwin</name>
+            <name>Becca</name>
+        </choice>
+    </race>
+    <moves>
+        <move name="Bend Bars, Lift Gates" minLevel="1">
+            <description><![CDATA[<p>When you use pure strength to destroy an inanimate obstacle, roll+Str.</p><ul><li>On a 10+, choose 3.</li><li>On a 7-9 choose 2.<ul><li>It doesn't take a very long time</li><li>Nothing of value is damaged</li><li>It doesn't make an inordinate amount of noise</li><li>You can fix the thing again without a lot of effort</li></ul></li></ul>]]></description>
+        </move>
+        <move name="Armored" minLevel="1">
+            <description><![CDATA[<p>You ignore the clumsy tag on armor you wear.</p>]]></description>
+        </move>
+        <move name="Signature Weapon" minLevel="1">
+            <description><![CDATA[<p>This is your weapon. There are many like it, but this one is yours. Your weapon is your best friend. It is your life. You master it as you master your life. Your weapon, without you, is useless. Without your weapon, you are useless. You must wield your weapon true.</p>]]></description>
+            <options name="base" choices="1" title="Choose a base description, all are 2 weight:">
+                <option>Sword</option>
+                <option>Axe</option>
+                <option>Hammer</option>
+                <option>Spear</option>
+                <option>Flail</option>
+                <option>Fists</option>
+            </options>
+            <options name="range" choices="1" title="Choose the range that best fits your weapon:">
+                <option>Hand</option>
+                <option>Close</option>
+                <option>Reach</option>
+            </options>
+            <options name="enhancements" choices="2" title="Choose two enhancements:">
+                <option name="Hooks and Spikes">+1 damage, but +1 weight</option>
+                <option name="Sharp">+2 piercing</option>
+                <option name="Perfectly Weighted">Add precise</option>
+                <option name="Serrated Edges">+1 damage</option>
+                <option>Glows in the presence of one type of creature, your choice</option>
+                <option name="Huge">Add messy and forceful</option>
+                <option name="Versatile">Choose an additional range</option>
+                <option name="Well-Crafted">-1 weight</option>
+            </options>
+            <options name="look" choices="1" title="Choose a look:">
+                <option>Ancient</option>
+                <option>Unblemished</option>
+                <option>Ornate</option>
+                <option>Blood-Stained</option>
+                <option>Sinister</option>
+            </options>
+        </move>
+        <move name="Merciless" minLevel="2">
+            <description><![CDATA[<p>When you deal damage, deal +1d4 damage.</p>]]></description>
+        </move>
+        <move name="Heirloom" minLevel="2">
+            <description><![CDATA[<p>When you consult the spirits that reside within your signature weapon, they will give you an insight relating to the current situation, and might ask you some questions in return, roll+CHA.</p><ul><li>On a 10+, the GM will give you good detail.</li><li>On a 7-9, the GM will give you an impression.</li></ul>]]></description>
+        </move>
+        <move name="Armor Mastery" minLevel="2">
+            <description><![CDATA[<p>When you <b>make your armor take the brunt of damage dealt to you</b>, the damage is negated but you must reduce the armor value of your armor or shield (your choice) by 1. The value is reduced each time you make this choice. If the reduction leaves the item with 0 armor it is destroyed.</p>]]></description>
+        </move>
+        <move name="Improved Weapon" minLevel="2">
+            <description><![CDATA[<p>Choose one extra enhancement for your signature weapon.</p>]]></description>
+            <options name="enhancements" choices="1">
+                <option name="Hooks and Spikes">+1 damage, but +1 weight</option>
+                <option name="Sharp">+2 piercing</option>
+                <option name="Perfectly Weighted">Add precise</option>
+                <option name="Serrated Edges">+1 damage</option>
+                <option>Glows in the presence of one type of creature, your choice</option>
+                <option name="Huge">Add messy and forceful</option>
+                <option name="Versatile">Choose an additional range</option>
+                <option name="Well-Crafted">-1 weight</option>
+            </options>
+        </move>
+        <move name="Seeing Red" minLevel="2">
+            <description><![CDATA[<p>When you discern realities during combat, you take +1.</p>]]></description>
+        </move>
+        <move name="Interrogator" minLevel="2">
+            <description><![CDATA[<p>When you <b>parley using threats of impending violence as leverage</b>, you may use STR instead of CHA.</p>]]></description>
+        </move>
+        <move name="Scent of Blood" minLevel="2">
+            <description><![CDATA[<p>When you hack and slash an enemy, your next attack against that same foe deals +1d4 damage.</p>]]></description>
+        </move>
+        <move name="Multiclass Dabbler" minLevel="2">
+            <description><![CDATA[<p>Get one move from another class. Treat your level as one lower for choosing the move.</p>]]></description>
+            <options type="multiclass" choices="1" levelMod="-1"></options>
+        </move>
+        <move name="Iron Hide" minLevel="2">
+            <description><![CDATA[<p>You gain +1 armor.</p>]]></description>
+        </move>
+        <move name="Blacksmith" minLevel="2">
+            <description><![CDATA[<p>When you have access to a forge you can graft the magical powers of a weapon onto your signature weapon. This process destroys the magical weapon. Your signature weapon gains the magical powers of the destroyed weapon.</p>]]></description>
+        </move>
+        <move name="Bloodthirsty" minLevel="6" replaces="Merciless">
+            <description><![CDATA[<p>When you deal damage, deal +1d8 damage.</p>]]></description>
+        </move>
+        <move name="Armored Perfection" minLevel="6" replaces="Armor Mastery">
+            <description><![CDATA[<p>When you <b>choose to let your armor take the brunt of damage dealt to you</b>, the damage is negated and you take +1 forward against the attacker, but you must reduce the armor value of your armor or shield (your choice) by 1. The value is reduced each time you make this choice. If the reduction leaves the item with 0 armor it is destroyed.</p>]]></description>
+        </move>
+        <move name="Evil Eye" minLevel="6" requires="Seeing Red">
+            <description><![CDATA[<p>When you enter combat, roll+CHA.</p><ul><li>On a 10+, hold 2.</li><li>On a 7-9, hold 1. Spend your hold to make eye contact with an NPC present, who freezes or flinches and can't act until you break it off.</li><li>On a 6-, your enemies immediately identify you as their biggest threat.</li></ul>]]></description>
+        </move>
+        <move name="Taste of Blood" minLevel="6" replaces="Scent of Blood">
+            <description><![CDATA[<p>When you hack and slash an enemy, your next attack against that same foe deals +1d8 damage.</p>]]></description>
+        </move>
+        <move name="Multiclass Initiate" minLevel="6" requires="Multiclass Dabbler">
+            <description><![CDATA[<p>Get one move from another class. Treat your level as one lower for choosing the move.</p>]]></description>
+            <options type="multiclass" choices="1" levelMod="-1"></options>
+        </move>
+        <move name="Steel Hide" minLevel="6" replaces="Iron Hide">
+            <description><![CDATA[<p>You gain +2 armor.</p>]]></description>
+        </move>
+        <move name="Through Death's Eyes" minLevel="6">
+            <description><![CDATA[<p>When you go into battle, roll+WIS.</p><ul><li>On a 10+, name someone who will live and someone who will die.</li><li>On a 7-9, name someone who will live or someone who will die. Name NPCs, not player characters. The GM will make your vision come true, if it's even remotely possible.</li><li>On a 6- you see your own death and consequently take -1 ongoing throughout the battle.</li></ul>]]></description>
+        </move>
+        <move name="Eye for Weaponry" minLevel="6">
+            <description><![CDATA[<p>When you look over an enemy's weaponry, ask the GM how much damage they do.</p>]]></description>
+        </move>
+        <move name="Superior Warrior" minLevel="6">
+            <description><![CDATA[<p>When you hack and slash on a 12+ you deal your damage, avoid their attack, and impress, dismay, or frighten your enemy.</p>]]></description>
+        </move>
+    </moves>
+</class>

@@ -1,0 +1,234 @@
+<div class="row">
+    <div class="col-md-6">
+        {{ charclass['description']|safe }}
+    </div>
+    <div class="col-md-6">
+        <section>
+            <p>Choose a race and gain the corresponding move:</p>
+            {% for race in charclass['race']['choice']|makelist %}
+                <div class="radio"><label>
+                    {% if loop.first %}
+                        <input type="radio" name="race" value="{{ race['@name'] }}" checked required>
+                    {% else %}
+                        <input type="radio" name="race" value="{{ race['@name'] }}" required>
+                    {% endif %}
+                    <b>{{ race['@name']|title }}</b>: {{ race['description']|safe }}<br>
+                    <i>Names</i>: {{ race['name']|join(', ') }}
+                    {% if race['title'] %}
+                        <br><i>Titles</i>: {{ race['title']|join(', ') }}
+                    {% endif %}
+                </label></div>
+            {% endfor %}
+        </section>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-7">
+        <section>
+            <h2>Look</h2>
+            <p>Choose one for each, or write your own:</p>
+            {% for look in charclass['looks']['look'] %}
+                <div class="form-inline">
+                {% for choice in look['choice'] %}
+                    <div class="form-group look-choice">
+                        <label class="radio">
+                            {% if loop.first %}
+                                <input type="radio" name="look-{{ look['@type'] }}" class="look-choice" value="{{ choice }}" checked required>
+                            {% else %}
+                                <input type="radio" name="look-{{ look['@type'] }}" class="look-choice" value="{{ choice }}" required>
+                            {% endif %}
+                            {{ choice }}
+                        </label>
+                    </div>
+                {% endfor %}
+                <div class="radio">
+                    <label id="look-{{ look['@type'] }}-custom" class="look-custom">
+                        <input type="radio" name="look-{{ look['@type'] }}" class="look-choice" value="">
+                        <input type="text" name="look-{{ look['@type'] }}-custom" class="form-control" placeholder="Write your own">
+                    </label>
+                </div></div>
+            {% endfor %}
+        </section>
+    </div>
+    <div class="col-md-5">
+        <section>
+            <h2>Alignment</h2>
+            <p>Choose an alignment:</p>
+            <dl class="dl-horizontal">
+                {% for alignment in charclass['alignment']['choice'] %}
+                    <div class="radio"><label>
+                        {% if loop.first %}
+                            <input type="radio" name="alignment" value="{{ alignment['@name'] }}" checked required>
+                        {% else %}
+                            <input type="radio" name="alignment" value="{{ alignment['@name'] }}" required>
+                        {% endif %}
+                            <b>{{ alignment['@name']|title }}</b>: {{ alignment['#text'] }}
+                    </label></div>
+                {% endfor %}
+            </dl>
+        </section>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-7">
+        <section>
+            <h2>Stats</h2>
+            <div class="row">
+            <div class="ability-score col-lg-2 col-md-4 col-sm-4 col-xs-6">
+                <label>Strength</label>
+                <select class="form-control" name="strength" required>
+                    <option value="" disabled selected hidden></option>
+                    <option>16</option>
+                    <option>15</option>
+                    <option>13</option>
+                    <option>12</option>
+                    <option>9</option>
+                    <option>8</option>
+                </select>
+            </div>
+            <div class="ability-score col-lg-2 col-md-4 col-sm-4 col-xs-6">
+                <label>Dexterity</label>
+                <select class="form-control" name="dexterity" required>
+                    <option value="" disabled selected hidden></option>
+                    <option>16</option>
+                    <option>15</option>
+                    <option>13</option>
+                    <option>12</option>
+                    <option>9</option>
+                    <option>8</option>
+                </select>
+            </div>
+            <div class="ability-score col-lg-2 col-md-4 col-sm-4 col-xs-6">
+                <label>Constitution</label>
+                <select class="form-control" name="constitution" required>
+                    <option value="" disabled selected hidden></option>
+                    <option>16</option>
+                    <option>15</option>
+                    <option>13</option>
+                    <option>12</option>
+                    <option>9</option>
+                    <option>8</option>
+                </select>
+            </div>
+            <div class="ability-score col-lg-2 col-md-4 col-sm-4 col-xs-6">
+                <label>Intelligence</label>
+                <select class="form-control" name="intelligence" required>
+                    <option value="" disabled selected hidden></option>
+                    <option>16</option>
+                    <option>15</option>
+                    <option>13</option>
+                    <option>12</option>
+                    <option>9</option>
+                    <option>8</option>
+                </select>
+            </div>
+            <div class="ability-score col-lg-2 col-md-4 col-sm-4 col-xs-6">
+                <label>Wisdom</label>
+                <select class="form-control" name="wisdom" required>
+                    <option value="" disabled selected hidden></option>
+                    <option>16</option>
+                    <option>15</option>
+                    <option>13</option>
+                    <option>12</option>
+                    <option>9</option>
+                    <option>8</option>
+                </select>
+            </div>
+            <div class="ability-score col-lg-2 col-md-4 col-sm-4 col-xs-6">
+                <label>Charisma</label>
+                <select class="form-control" name="charisma" required>
+                    <option value="" disabled selected hidden></option>
+                    <option>16</option>
+                    <option>15</option>
+                    <option>13</option>
+                    <option>12</option>
+                    <option>9</option>
+                    <option>8</option>
+                </select>
+            </div>
+            </div>
+            <br>
+            <p>Your maximum HP is {{ charclass['stats']['hp'] }}+Constitution.</p>
+            <p>Your base damage is {{ charclass['stats']['damage'] }}.</p>
+            <p>Your load is {{ charclass['gear']['@load'] }}+STR.</p>
+        </section>
+    </div>
+    <div class="col-md-5">
+        <section id="bonds">
+            <h2>Bonds</h2>
+            <p>{{ charclass['bonds']['@text'] }}</p>
+            {% for bond in charclass['bonds']['bond'] %}
+                <p>{{ bond|replace('[BLANK]', '<input type="text" class="form-control bond-group" name="bond{{ loop.index }}" placeholder="Name...">')|safe }}</p>
+            {% endfor %}
+        </section>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-7">
+        <section>
+            <h2>Starting Moves</h2>
+            <div class="moves">
+            {% for move in charclass['moves']['move']|selectattr('@minLevel', 'equalto', '1') %}
+                <div style="display: inline-block;">
+                    <h3>{{ move['@name'] }}</h3>
+                    {{ move['description']|safe }}
+                    {% if move['options'] %}
+                        {% for options in move['options']|makelist %}
+                            <h4>{{ options['@title'] }}</h4>
+                            {% for option in options['option'] %}
+                                {% if options['@choices'] and options['@choices']|int == 1 %}
+                                    {% set type = 'radio' %}
+                                {% else %}
+                                    {% set type = 'checkbox' %}
+                                {% endif %}
+                                <div class="{{ type }}">
+                                    <label>
+                                    {% if loop.first %}
+                                        <input type={{ type }} name="{{ options['@name'] }}" value="{{ option }}" checked required>
+                                    {% else %}
+                                        <input type={{ type }} name="{{ options['@name'] }}"  value="{{ option }}"required>
+                                    {% endif %}
+                                    {% if option['@name'] %}
+                                        <b>{{ option['@name'] }}</b>: {{ option['#text'] }}
+                                    {% else %}
+                                        {{ option }}
+                                    {% endif %}
+                                    </label>
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            {% endfor %}
+            </div>
+        </section>
+    </div>
+    
+    <div class="col-md-5">
+        <section>
+            <h2>Gear</h2>
+            <p>{{ charclass['gear']['description'] }}</p>
+            {% for item in charclass['gear']['items']['item']|makelist %}
+                {% if item['@name'] %}
+                    <p><input type="text" name="{{ item['@name'] }}" class="form-control" placeholder="Description" required></p>
+                {% else %}
+                    <p>{{ item }}</p>
+                {% endif %}
+            {% endfor %}
+            {% for gear in charclass['gear']['choices']['choice'] %}
+                <h3>{{ gear['@title'] }}</h3>
+                {% for option in gear['option'] %}
+                    <div class="radio">
+                        <label>
+                        {% if loop.first %}
+                            <input type="radio" name="{{ gear['@type'] }}" value="{{ option }}" checked required>
+                        {% else %}
+                            <input type="radio" name="{{ gear['@type'] }}" value="{{ option }}" required>
+                        {% endif %}
+                        {{ option }}</label>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </section>
+    </div>
+</div>
