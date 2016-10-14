@@ -35,19 +35,24 @@
     <gear load="12">
         <description>Your load is 12+Str. You carry your signature weapon, describe it:</description>
         <items>
-            <item name="weapon"></item>
-            <item>Dungeon Rations (5 uses, 1 weight)</item>
+            <item name="weapon" type="weapon"></item>
+            <item type="equipment">Dungeon Rations (5 uses, 1 weight)</item>
         </items>
         <choices>
             <choice type="defenses" title="Choose your defenses:" choices="1">
-                <option>Chainmail (1 armor, 1 weight) and adventuring gear (1 weight)</option>
-                <option>Scale armor (2 armor, 3 weight)</option>
+                <option><item type="defense">Chainmail (1 armor, 1 weight)</item>
+                        <item type="defense">adventuring gear (1 weight)</item>
+                </option>
+                <option><item type="defense">Scale armor (2 armor, 3 weight)</item></option>
             </choice>
             <choice type="equipment" title="Choose two:" choices="2">
-                <option>2 Healing potions (0 weight)</option>
-                <option>Shield (+1 armor, 2 weight)</option>
-                <option>Antitoxin (0 weight), dungeon rations (1 weight), and poultices and herbs (1 weight)</option>
-                <option>22 coins</option>
+                <option><item type="equipment">2 Healing potions (0 weight)</item></option>
+                <option><item type="equipment">Shield (+1 armor, 2 weight)</item></option>
+                <option><item type="equipment">Antitoxin (0 weight)</item>
+                        <item type="equipment">Dungeon Rations (1 weight)</item>
+                        <item type="equipment">Poultices and herbs (1 weight)</item>
+                </option>
+                <option><item type="money" coins="22">22 coins</item></option>
             </choice>
         </choices>
     </gear>

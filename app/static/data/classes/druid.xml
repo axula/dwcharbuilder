@@ -30,22 +30,22 @@
     <gear load="6">
         <description>Your load is 6+Str. You carry some token of your land, describe it.</description>
         <items>
-            <item name="token"></item>
+            <item name="token" type="equipment"></item>
         </items>
         <choices>
             <choice type="defenses" title="Choose your defenses:" choices="1">
-                <option>Hide Armor (1 armor, 1 weight)</option>
-                <option>Wooden Shield (+1 armor, 1 weight)</option>
+                <option><item type="defense">Hide Armor (1 armor, 1 weight)</item></option>
+                <option><item type="defense">Wooden Shield (+1 armor, 1 weight)</item></option>
             </choice>
             <choice type="armaments" title="Choose your armament:" choices="1">
-                <option>Shillelagh (close, 2 weight)</option>
-                <option>Staff (close, two-handed, 1 weight)</option>
-                <option>Spear (close, thrown, near, 1 weight)</option>
+                <option><item type="weapon">Shillelagh (close, 2 weight)</item></option>
+                <option><item type="weapon">Staff (close, two-handed, 1 weight)</item></option>
+                <option><item type="defense">Spear (close, thrown, near, 1 weight)</item></option>
             </choice>
             <choice type="equipment" title="Choose one:" choices="1">
-                <option>Adventuring Gear (5 uses, 1 weight)</option>
-                <option>Poultices and Herbs (2 uses, slow, 1 weight)</option>
-                <option>Halfling Pipeleaf (6 uses, 0 weight)</option>
+                <option><item type="equipment">Adventuring Gear (5 uses, 1 weight)</item></option>
+                <option><item type="equipment">Poultices and Herbs (2 uses, slow, 1 weight)</item></option>
+                <option><item type="equipment">Halfling Pipeleaf (6 uses, 0 weight)</item></option>
             </choice>
         </choices>
     </gear>

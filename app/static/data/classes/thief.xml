@@ -34,23 +34,27 @@
     <gear load="9">
         <description>Your load is 9+Str.</description>
         <items>
-            <item>Dungeon Rations (5 uses, 1 weight)</item>
-            <item>Leather Armor (1 armor, 1 weight)</item>
-            <item>3 uses of your chosen poison</item>
-            <item>10 coins</item>
+            <item type="equipment">Dungeon Rations (5 uses, 1 weight)</item>
+            <item type="defense">Leather Armor (1 armor, 1 weight)</item>
+            <item type="equipment">3 uses of your chosen poison</item>
+            <item type="money" coins="10">10 coins</item>
         </items>
         <choices>
             <choice type="arms" title="Choose your arms:" choices="1">
-                <option>Dagger (hand, 1 weight) and short sword (close, 1 weight)</option>
-                <option>Rapier (close, precise, 1 weight)</option>
+                <option><item type="weapon">Dagger (hand, 1 weight)</item>
+                        <item type="weapon">short sword (close, 1 weight)</item>
+                </option>
+                <option><item type="weapon">Rapier (close, precise, 1 weight)</item></option>
             </choice>
             <choice type="ranged" title="Choose a ranged weapon:" choices="1">
-                <option>3 throwing daggers (thrown, near, 0 weight)</option>
-                <option>Ragged Bow (near, 2 weight) and bundle of arrows (3 ammo, 1 weight)</option>
+                <option><item type="weapon">3 throwing daggers (thrown, near, 0 weight)</item></option>
+                <option><item type="weapon">Ragged Bow (near, 2 weight)</item>
+                        <item type="equipment">Bundle of Arrows (3 ammo, 1 weight)</item>
+                </option>
             </choice>
             <choice type="equipment" title="Choose one:" choices="1">
-                <option>Adventuring gear (1 weight)</option>
-                <option>Healing potion (0 weight)</option>
+                <option><item type="equipment">Adventuring gear (1 weight)</item></option>
+                <option><item type="equipment">Healing potion (0 weight)</item></option>
             </choice>
         </choices>
     </gear>

@@ -17,7 +17,7 @@ $(document).ready(function() {
 });
 
 $('#new-character').validate({
-    debug: true, 
+    //debug: true, 
     errorClass: 'error', 
     validClass: 'success', 
     highlight: function(element, errorClass, validClass) {
@@ -49,7 +49,7 @@ $.validator.addClassRules("bond-group", {
     require_from_group: [1, ".bond-group"]
 });
 
-$('#new-character input').on('keyup blur', function () {
+$('#new-character').on('keyup blur change', function () {
     if ($('#new-character').valid()) {
         $('#save-character').prop('disabled', false); 
     } else {
@@ -62,4 +62,5 @@ $('#select-class').change(function() {
     $('#class-content').load('/class/new', {
         charclass: charclass
     }, function(data) { });
+    $('#save-character').prop('disabled', 'disabled');
 });

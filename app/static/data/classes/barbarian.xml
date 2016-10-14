@@ -37,18 +37,20 @@
     <gear load="8">
         <description>Your load is 8+Str. You carry some token of where you've travelled or where you're from.</description>
         <items>
-            <item name="token"></item>
-            <item>Dungeon Rations (5 uses, 1 weight)</item>
-            <item>Dagger (hand, 1 weight)</item>
+            <item name="token" type="equipment"></item>
+            <item type="equipment">Dungeon Rations (5 uses, 1 weight)</item>
+            <item type="weapon">Dagger (hand, 1 weight)</item>
         </items>
         <choices>
-            <choice type="weapon" title="Choose your defenses:" choices="1">
-                <option>Axe (close, 1 weight)</option>
-                <option>Two handed sword (close, +1 damage, 2 weight)</option>
+            <choice type="weapon" title="Choose your weapon:" choices="1">
+                <option><item type="weapon">Axe (close, 1 weight)</item></option>
+                <option><item type="weapon">Two handed sword (close, +1 damage, 2 weight)</item></option>
             </choice>
             <choice type="equipment" title="Choose one:" choices="1">
-                <option>Adventuring Gear (1 weight) and dungeon rations (5 uses, 1 weight)</option>
-                <option>Chainmail (1 armor, 1 weight)</option>
+                <option><item type="equipment">Adventuring Gear (1 weight)</item>
+                        <item type="equipment">Dungeon Rations (5 uses, 1 weight)</item>
+                </option>
+                <option><item type="defense">Chainmail (1 armor, 1 weight)</item></option>
             </choice>
         </choices>
     </gear>

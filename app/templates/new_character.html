@@ -158,7 +158,7 @@
             <h2>Bonds</h2>
             <p>{{ charclass['bonds']['@text'] }}</p>
             {% for bond in charclass['bonds']['bond'] %}
-                <p>{{ bond|replace('[BLANK]', '<input type="text" class="form-control bond-group" name="bond{{ loop.index }}" placeholder="Name...">')|safe }}</p>
+                <p>{{ bond|replace('[BLANK]', '<input type="text" class="form-control bond-group" name="bond' + loop.index|string + '" placeholder="Name...">')|safe }}</p>
             {% endfor %}
         </section>
     </div>
@@ -212,7 +212,7 @@
                 {% if item['@name'] %}
                     <p><input type="text" name="{{ item['@name'] }}" class="form-control" placeholder="Description" required></p>
                 {% else %}
-                    <p>{{ item }}</p>
+                    <p>{{ item['#text'] }}</p>
                 {% endif %}
             {% endfor %}
             {% for gear in charclass['gear']['choices']['choice'] %}
@@ -221,11 +221,11 @@
                     <div class="radio">
                         <label>
                         {% if loop.first %}
-                            <input type="radio" name="{{ gear['@type'] }}" value="{{ option }}" checked required>
+                            <input type="radio" name="{{ gear['@type'] }}" value="{{ option['item']|option_list }}" checked required>
                         {% else %}
-                            <input type="radio" name="{{ gear['@type'] }}" value="{{ option }}" required>
+                            <input type="radio" name="{{ gear['@type'] }}" value="{{ option['item']|option_list }}" required>
                         {% endif %}
-                        {{ option }}</label>
+                        {{ option['item']|option_list }}</label>
                     </div>
                 {% endfor %}
             {% endfor %}

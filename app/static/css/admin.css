@@ -2,6 +2,18 @@
 
 body { padding-top: 70px; } /* offsets static navbar */
 
+#main {
+    min-height: 80vh;
+}
+
+.navbar {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+}
+
 h1 { margin-top: 0 !important; }
 
 .character-summary h3, .character-summary h4 {
@@ -89,6 +101,12 @@ h1 { margin-top: 0 !important; }
 
 body {
     font-size: 14px !important;
+}
+
+/* User Page */
+
+#user-characters th, #user-characters td {
+    font-size: 16px !important;
 }
 
 /* New Character */

@@ -35,22 +35,26 @@
     <gear load="10">
         <description>Your load is 10+Str. You carry some symbol of the divine, describe it.</description>
         <items>
-            <item name="symbol"></item>
-            <item>Dungeon Rations (5 uses, 1 weight)</item>
+            <item name="symbol" type="equipment"></item>
+            <item type="equipment">Dungeon Rations (5 uses, 1 weight)</item>
         </items>
         <choices>
             <choice type="defenses" title="Choose your defenses:" choices="1">
-                <option>Chainmail (1 armor, 1 weight)</option>
-                <option>Shield (+1 armor, 2 weight)</option>
+                <option><item type="defense">Chainmail (1 armor, 1 weight)</item></option>
+                <option><item type="defense">Shield (+1 armor, 2 weight)</item></option>
             </choice>
             <choice type="armaments" title="Choose your armament:" choices="1">
-                <option>Warhammer (close, 1 weight)</option>
-                <option>Mace (close, 1 weight)</option>
-                <option>Staff (close, two-handed, 1 weight) and bandages (0 weight)</option>
+                <option><item type="weapon">Warhammer (close, 1 weight)</item></option>
+                <option><item type="weapon">Mace (close, 1 weight)</item></option>
+                <option><item type="weapon">Staff (close, two-handed, 1 weight)</item>
+                        <item type="equipment">bandages (0 weight)</item>
+                </option>
             </choice>
             <choice type="equipment" title="Choose one:" choices="1">
-                <option>Adventuring gear (1 weight) and dungeon rations (5 uses, 1 weight)</option>
-                <option>Healing potion (0 weight)</option>
+                <option><item type="equipment">Adventuring gear (1 weight)</item>
+                        <item type="equipment">Dungeon Rations (5 uses, 1 weight)</item>
+                </option>
+                <option><item type="equipment">Healing potion (0 weight)</item></option>
             </choice>
         </choices>
     </gear>

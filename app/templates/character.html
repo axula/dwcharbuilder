@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+	<title>Character Sheet</title>
+	<link href="/static/css/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        var $CHARACTERID = parseInt( {{ character.id }} );
+    </script>
+	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/static/css/bootstrap-theme.min.css" rel="stylesheet">
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>	
+	<![endif]-->
+</head>
+<body>
+
+<header id="header">
+    {% include '/includes/nav.html' %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-5 col-sm-3">
+                <h1><label>Name</label> {{ character.name }}</h1>
+            </div>
+            <div class="col-md-3 col-sm-3">
+                <h1><label>Class</label> {{ character.class_name|title }}</h1>
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-5">
+                <h1><label>Level</label> {{ character.level }}</h1>
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-7">
+                <h1 class="text-right"><label>XP</label> {{ character.xp }}</h1>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div id="main" class="container-fluid">
+<div class="row">
+    <div class="col-md-3 col-sm-4">
+        <section id="combat-stats" class="text-center">
+            <div>
+                <h2>Armor</h2>
+                <p id="armor-bonus">{{ character.armor_bonus() }}</p>
+            </div><div>
+                <h2>HP</h2>
+                <p>{{ character.max_hp() }} / {{ character.max_hp() }}</p>
+            </div><div>
+                <h2>Damage</h2>
+                <p>{{ data['damage']|title }}</p>
+            </div>
+        </section>
+        <section id="ability-scores">
+            <div id="strength" class="ability">
+                <h2>Strength <b>{{ character.strength }}</b></h2>
+                <p><input type="checkbox"> Weak -1</p>
+                <div class="ability-mod"><small>STR</small> <b>{{ character.modifier(character.strength) }}</b></div>
+            </div>
+            <div id="dexterity" class="ability">
+                <h2>Dexterity <b>{{ character.dexterity }}</b></h2>
+                <p><input type="checkbox"> Shaky -1</p>
+                <div class="ability-mod"><small>DEX</small> <b>{{ character.modifier(character.dexterity) }}</b></div>
+            </div>
+            <div id="constitution" class="ability">
+                <h2>Constitution <b>{{ character.constitution }}</b></h2>
+                <p><input type="checkbox"> Sick -1</p>
+                <div class="ability-mod"><small>CON</small> <b>{{ character.modifier(character.constitution) }}</b></div>
+            </div>
+            <div id="intelligence" class="ability">
+                <h2>Intelligence <b>{{ character.intelligence }}</b></h2>
+                <p><input type="checkbox"> Stunned -1</p>
+                <div class="ability-mod"><small>INT</small> <b>{{ character.modifier(character.intelligence) }}</b></div>
+            </div>
+            <div id="wisdom" class="ability">
+                <h2>Wisdom <b>{{ character.wisdom }}</b></h2>
+                <p><input type="checkbox"> Confused -1</p>
+                <div class="ability-mod"><small>WIS</small> <b>{{ character.modifier(character.wisdom) }}</b></div>
+            </div>
+            <div id="charisma" class="ability">
+                <h2>Charisma <b>{{ character.charisma }}</b></h2>
+                <p><input type="checkbox"> Scarred -1</p>
+                <div class="ability-mod"><small>CHA</small> <b>{{ character.modifier(character.charisma) }}</b></div>
+            </div>
+        </section>
+    </div>
+    <div class="col-md-9 col-sm-8"><div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <section id="moves">
+                <header><h2 class="section-title">Moves</h2></header>
+                <article>
+                    <dl>
+                    {% for move in data['moves'] %}
+                        <a href="#{{ move['url'] }}" data-toggle="collapse" aria-expanded="false" aria-controls="{{ move['url'] }}">
+                            <dt>{{ move['title'] }}
+                                {% if move['choices'] %}
+                                    <br><small class="move-choices">{{ move['choices'] }}</small>
+                                {% endif %}
+                            </dt>
+                        </a>
+                        <dd class="collapse" id="{{ move['url'] }}">
+                            <p><i>{{ move['type'] }}</i></p>
+                            {{ move['text']|safe }}
+                        </dd>
+                    {% endfor %}
+                    </dl>
+                </article>
+            </section>
+        </div>
+        <div class="col-lg-8 col-md-6 col-sm-12"><div class="row">
+            <div class="col-lg-6 col-md-12">
+                <section id="look">
+                    <header><h2 class="section-title">Look</h2></header>
+                    <article>
+                        <dl>
+                            {% for name, look in data['look'].iteritems() %}
+                                <dt>{{ name|replace('look-', '')|title }}</dt>
+                                <dd>{{ look }}</dd>
+                            {% endfor %}
+                        </dl>
+                    </article>
+                </section>
+                <section id="alignment">
+                    <header><h2 class="section-title">Alignment</h2></header>
+                    <article>
+                        <dl>
+                            <dt>{{ character['alignment']|title }}</dt>
+                            <dd>{{ data['alignment_text'] }}</dd>
+                        </dl>
+                    </article>
+                </section>
+                <section id="bonds">
+                    <header><h2 class="section-title">Bonds</h2></header>
+                    <article>
+                        <ul class="list-unstyled">
+                        {% for bond in data['bonds'] %}
+                            <li>{{ bond|safe }}</li>
+                        {% endfor %}
+                        </ul>
+                    </article>
+                </section>
+                <section id="race">
+                    <header><h2 class="section-title">Race</h2></header>
+                    <article>
+                        <dl>
+                            <dt>{{ character['race']|title }}</dt>
+                            <dd>{{ data['race_text'] }}</dd>
+                        </dl>
+                    </article>
+                </section>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <section id="equipment">
+                    <header><h2 class="section-title">Equipment <span class="pull-right title-button glyphicon glyphicon-plus" aria-hidden="true" data-toggle="modal" data-target="#equipment-menu"></span></h2></header>
+                    <article>
+                        <ul id="backpack-armor" class="list-unstyled">
+                            <h3>Defenses</h3>
+                            <li class="empty"><i>No armor</i></li>
+                            {% for armor in data['armors'] %}
+                                <li data-id="{{ armor.id }}"><b>{{ armor.name }}</b> {{ armor.get_tags() }}<a class="pull-right" onclick="removeGear({{ armor.id }})"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></li>
+                            {% endfor %}
+                        </ul><ul id="backpack-weapon" class="list-unstyled">
+                            <h3>Weapons</h3>
+                            <li class="empty"><i>No weapons</i></li>
+                            {% for weapon in data['weapons'] %}
+                                <li data-id="{{ weapon.id }}"><b>{{ weapon.name }}</b> {{ weapon.get_tags() }}<a class="pull-right" onclick="removeGear()"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></li>
+                            {% endfor %}
+                        </ul><ul id="backpack-gear" class="list-unstyled">
+                            <h3>Dungeon Gear</h3>
+                            <li class="empty"><i>No gear</i></li>
+                            {% for gear in data['gear'] %}
+                                <li data-id="{{ gear.id }}" data-description="{{ gear.get_description() }}"><b>{{ gear.name }}</b> {{ gear.get_tags() }}<a class="pull-right" onclick="removeGear()"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></li>
+                            {% endfor %}
+                        </ul><ul id="backpack-poison" class="list-unstyled">
+                            <h3>Poisons</h3>
+                            <li class="empty"><i>No poisons</i></li>
+                            {% for gear in data['poisons'] %}
+                                <li data-id="{{ poison.id }}" data-description="{{ poison.get_description() }}"><b>{{ poison.name }}</b> {{ poison.get_tags() }}<a class="pull-right" onclick="removeGear()"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></li>
+                            {% endfor %}
+                        </ul>
+                    </article>
+                </section>
+                <section class="pill-section-wrapper">
+                    <div class="pill-section">
+                        <h3>Coin</h3>
+                        <p>{{ character.money }}</p>
+                    </div><div class="pill-section">
+                        <h3>Current Load</h3>
+                        <p><span id="current-load">{{ character.current_load() }}</span> / {{ data['max_load'] }}</p>
+                    </div>
+                </section>
+            </div>
+        </div></div>
+    </div></div>
+</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="equipment-menu" tabindex="-1" role="dialog" aria-labelledby="itemLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="overflow: hidden;">
+      <div class="modal-header" style="border: 0 !important; padding-bottom: 0 !important;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="itemLabel">
+			<ul class="nav nav-tabs">
+			  <li role="presentation" class="active equipmentNav" data-type="weapon"><a href="#">Weapons</a></li>
+			  <li role="presentation" class="equipmentNav" data-type="armor"><a href="#">Armor</a></li>
+			  <li role="presentation" class="equipmentNav" data-type="gear"><a href="#">Dungeon Gear</a></li>
+			  <li role="presentation" class="equipmentNav" data-type="poison"><a href="#">Poison</a></li>
+		</ul></h4>
+      </div>
+      <div class="modal-body"><div class="row">
+		<div class="col-md-12">
+		  <nav>
+			<form><input style="margin-bottom: 5px;" class="form-control" id="search-items" placeholder="Search..."></form>
+			<ul class="equipment-list nav nav-pills nav-stacked">
+				<!-- Items -->
+				{% for weapon in data['weapon_choices'] %}
+					<li><a href="#" data-name="{{ weapon['name'] }}" data-tags="{{ weapon['tags'] }}" data-type="weapon" data-source="{{ weapon['source'] }}" data-price="{{ weapon['price'] }}">{{ weapon['name'] }} {{ weapon['tags'] }}</a></li>
+				{% endfor %}
+				{% for armor in data['armor_choices'] %}
+					<li class="hide"><a href="#" data-name="{{ armor['name'] }}" data-tags="{{ armor['tags'] }}" data-type="armor" data-source="{{ armor['source'] }}" data-price="{{ armor['price'] }}">{{ armor['name'] }} {{ armor['tags'] }}</a></li>
+				{% endfor %}
+				{% for gear in data['gear_choices'] %}
+					<li class="hide"><a href="#" data-name="{{ gear['name'] }}" data-tags="{{ gear['tags'] }}" data-type="gear" data-source="{{ gear['source'] }}" data-price="{{ gear['price'] }}" data-description="{{ gear['description'] }}">{{ gear['name'] }} {{ gear['tags'] }}</a></li>
+				{% endfor %}
+				{% for poison in data['poison_choices'] %}
+					<li class="hide"><a href="#" data-name="{{ poison['name'] }}" data-tags="{{ poison['tags'] }}" data-type="poison" data-source="{{ poison['source'] }}" data-price="{{ poison['price'] }}" data-description="{{ poison['description'] }}">{{ poison['name'] }} {{ poison['tags'] }}</a></li>
+				{% endfor %}
+			</ul>
+		  </nav>
+		</div>
+      </div></div><!-- . modal.body + .row -->
+      <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			<button id="add-equipment" type="button" class="btn btn-primary" data-dismiss="modal">Add</button>
+			<button id="buy-equipment" type="button" class="btn btn-primary" data-dismiss="modal">Buy</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/script.js"></script>
+</body>
+</html>

@@ -41,12 +41,20 @@
         </items>
         <choices>
             <choice type="armaments" title="Choose your armament:" choices="1">
-                <option>Hunter's bow (near, far, 1 weight) and short sword (close, 1 weight)</option>
-                <option>Hunter's bow (near, far, 1 weight) and spear (reach, 1 weight)</option>
+                <option><item type="weapon">Hunter's bow (near, far, 1 weight)</item>
+                        <item type="weapon">short sword (close, 1 weight)</item>
+                </option>
+                <option><item type="weapon">Hunter's bow (near, far, 1 weight)</item>
+                        <item type="weapon">spear (reach, 1 weight)</item>
+                </option>
             </choice>
             <choice type="equipment" title="Choose one:" choices="1">
-                <option>Adventuring gear (1 weight) and dungeon rations (1 weight)</option>
-                <option>Adventuring gear (1 weight) and bundle of arrows (3 ammo, 1 weight)</option>
+                <option><item type="equipment">Adventuring gear (1 weight)</item>
+                        <item type="equipment">Dungeon Rations (1 weight)</item>
+                </option>
+                <option><item type="equipment">Adventuring gear (1 weight)</item>
+                        <item type="equipment">Bundle of Arrows (3 ammo, 1 weight)</item>
+                </option>
             </choice>
         </choices>
     </gear>

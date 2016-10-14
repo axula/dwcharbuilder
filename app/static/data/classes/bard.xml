@@ -34,31 +34,32 @@
     </alignment>
     <gear load="9">
         <description>Your load is 9+Str.</description>
-        <items>
-            <item name="token"></item>
-        </items>
         <choices>
             <choice type="instrument" title="Choose one instrument:" choices="1">
-                <option>Your father's mandolin, repaired (0 weight)</option>
-                <option>A fine lute, a gift from a noble (0 weight)</option>
-                <option>The pipes with which you courted your first love (0 weight)</option>
-                <option>A stolen horn (0 weight)</option>
-                <option>A fiddle, never before played (0 weight)</option>
-                <option>A songbook in a forgotten tongue (0 weight)</option>
+                <option><item type="equipment">Your father's mandolin, repaired (0 weight)</item></option>
+                <option><item type="equipment">A fine lute, a gift from a noble (0 weight)</item></option>
+                <option><item type="equipment">The pipes with which you courted your first love (0 weight)</item></option>
+                <option><item type="equipment">A stolen horn (0 weight)</item></option>
+                <option><item type="equipment">A fiddle, never before played (0 weight)</item></option>
+                <option><item type="equipment">A songbook in a forgotten tongue (0 weight)</item></option>
             </choice>
             <choice type="clothing" title="Choose your clothing:" choices="1">
-                <option>Leather armor (1 armor, 1 weight)</option>
-                <option>Ostentatious clothes (0 weight)</option>
+                <option><item type="defense">Leather armor (1 armor, 1 weight)</item></option>
+                <option><item type="equipment">Ostentatious clothes (0 weight)</item></option>
             </choice>
             <choice type="armaments" title="Choose your armament:" choices="1">
-                <option>Dueling rapier (close, precise, 2 weight)</option>
-                <option>Worn bow (near, 2 weight), bundle of arrows (3 ammo, 1 weight), and short sword (close, 1 weight)</option>
+                <option><item type="weapon">Dueling rapier (close, precise, 2 weight)</item>
+                </option>
+                <option><item type="weapon">Worn bow (near, 2 weight)</item>
+                        <item type="weapon">bundle of arrows (3 ammo, 1 weight)</item>
+                        <item type="weapon">short sword (close, 1 weight)</item>
+                </option>
             </choice>
             <choice type="equipment" title="Choose one:" choices="1">
-                <option>Adventuring gear (1 weight)</option>
-                <option>Bandages (0 weight)</option>
-                <option>Halfling pipeleaf (0 weight)</option>
-                <option>3 coins</option>
+                <option><item type="equipment">Adventuring gear (1 weight)</item></option>
+                <option><item type="equipment">Bandages (0 weight)</item></option>
+                <option><item type="equipment">Halfling pipeleaf (0 weight)</item></option>
+                <option><item type="money" coins="3">3 coins</item></option>
             </choice>
         </choices>
     </gear>

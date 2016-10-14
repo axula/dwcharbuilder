@@ -33,18 +33,22 @@
     <gear load="12">
         <description>Your load is 12+Str. You carry some mark of faith, describe it.</description>
         <items>
-            <item name="holy symbol"></item>
-            <item>Dungeon Rations (5 uses, 1 weight)</item>
-            <item>Scale Armor (2 armor, 3 weight)</item>
+            <item name="holy symbol" type="equipment"></item>
+            <item type="equipment">Dungeon Rations (5 uses, 1 weight)</item>
+            <item type="defense">Scale Armor (2 armor, 3 weight)</item>
         </items>
         <choices>
             <choice type="armaments" title="Choose your weapon:" choices="1">
-                <option>Halberd (reach, +1 damage, two-handed, 2 weight)</option>
-                <option>Long sword (close, +1 damage, 1 weight) and shield (+1 armor, 2 weight)</option>
+                <option><item type="weapon">Halberd (reach, +1 damage, two-handed, 2 weight)</item></option>
+                <option><item type="weapon">Long Sword (close, +1 damage, 1 weight)</item>
+                        <item type="defense">Shield (+1 armor, 2 weight)</item>
+                </option>
             </choice>
             <choice type="equipment" title="Choose one:" choices="1">
-                <option>Adventuring gear (1 weight)</option>
-                <option>Dungeon rations (1 weight) and healing potion (0 weight)</option>
+                <option><item type="equipment">Adventuring gear (1 weight)</item></option>
+                <option><item type="equipment">Dungeon rations (1 weight)</item>
+                        <item type="equipment">healing potion (0 weight)</item>
+                </option>
             </choice>
         </choices>
     </gear>

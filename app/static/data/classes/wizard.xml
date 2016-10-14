@@ -35,21 +35,22 @@
     <gear load="7">
         <description>Your load is 7+Str.</description>
         <items>
-            <item>Spellbook (1 weight)</item>
-            <item>Dungeon Rations (5 uses, 1 weight)</item>
+            <item type="equipment">Spellbook (1 weight)</item>
+            <item type="equipment">Dungeon Rations (5 uses, 1 weight)</item>
         </items>
         <choices>
             <choice type="defenses" title="Choose your defenses:" choices="1">
-                <option>Leather armor (1 armor, 1 weight)</option>
-                <option>Bag of books (5 uses, 2 weight) and 3 healing potions</option>
+                <option><item type="defense">Leather armor (1 armor, 1 weight)</item></option>
+                <option><item type="equipment">Bag of books (5 uses, 2 weight)</item>
+                        <item type="equipment">3 healing potions</item></option>
             </choice>
             <choice type="armaments" title="Choose your weapon:" choices="1">
-                <option>Dagger (hand, 1 weight)</option>
-                <option>Staff (close, two-handed, 1 weight)</option>
+                <option><item type="weapon">Dagger (hand, 1 weight)</item></option>
+                <option><item type="weapon">Staff (close, two-handed, 1 weight)</item></option>
             </choice>
             <choice type="equipment" title="Choose one:" choices="1">
-                <option>Healing potion (0 weight)</option>
-                <option>3 antitoxins (0 weight)</option>
+                <option><item type="equipment">Healing potion (0 weight)</item></option>
+                <option><item type="equipment">3 Antitoxins (0 weight)</item></option>
             </choice>
         </choices>
     </gear>

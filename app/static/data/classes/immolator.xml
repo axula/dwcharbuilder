@@ -35,15 +35,15 @@
     <gear load="9">
         <description>Your Load is 9+STR. You carry no weapon and need no armor but the flames the burn within you. You begin with a symbol of your sacrifices past, describe it:</description>
         <items>
-            <item name="symbol"></item>
-            <item>Adventuring Gear (5 uses, 1 weight)</item>
-            <item>1 healing potion</item>
+            <item name="symbol" type="equipment"></item>
+            <item type="equipment">Adventuring Gear (5 uses, 1 weight)</item>
+            <item type="equipment">1 healing potion</item>
         </items>
         <choices>
             <choice type="equipment" title="Choose two:" choices="2">
-                <option>Dungeon Rations (5 uses, 1 weight)</option>
-                <option>1 Healing Potion (0 weight)</option>
-                <option>10 coins</option>
+                <option><item type="equipment">Dungeon Rations (5 uses, 1 weight)</item></option>
+                <option><item type="equipment">1 Healing Potion (0 weight)</item></option>
+                <option><item type="money" coins="10">10 coins</item></option>
             </choice>
         </choices>
     </gear>
